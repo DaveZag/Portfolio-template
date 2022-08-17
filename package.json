@@ -1,0 +1,20 @@
+{
+  "name": "portfolio-setup-and-mobile-first",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaveZag/Portfolio-setup-and-mobile-first.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DaveZag/Portfolio-setup-and-mobile-first/issues"
+  },
+  "homepage": "https://github.com/DaveZag/Portfolio-setup-and-mobile-first#readme"
+}
