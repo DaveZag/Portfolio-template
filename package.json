@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/DaveZag/Portfolio-setup-and-mobile-first/issues"
   },
-  "homepage": "https://github.com/DaveZag/Portfolio-setup-and-mobile-first#readme"
+  "homepage": "https://github.com/DaveZag/Portfolio-setup-and-mobile-first#readme",
+  "devDependencies": {
+    "hint": "^7.1.1"
+  }
 }
