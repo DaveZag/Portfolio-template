@@ -30,11 +30,11 @@ To get a local copy up and running follow these simple example steps.
 
 👤 **Dave ZAGABE**
 
-## Links
+## Repo Links
 
 - Repository: [Portfolio](https://github.com/DaveZag/Portfolio-setup-and-mobile-first)
 
-### Socials
+## Socials
 
 >- GitHub: [Dave Zag](https://github.com/DaveZag)
 >- Twitter: [Dave Zagabe](https://twitter.com/davezagabe2)
