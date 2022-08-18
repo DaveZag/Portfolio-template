@@ -191,6 +191,8 @@ main {
 }
 
 .hero-title h1 {
+  width: 20.4375rem;
+  height: 7.75rem;
   font-size: 3.5rem;
   line-height: 4rem;
   letter-spacing: 0.023rem;
@@ -198,13 +200,18 @@ main {
 }
 
 .hero-title h3 {
+  width: 20.4375rem;
+  height: 1.6875;
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 2rem;
   font-style: normal;
+  margin-top: 0.75rem;
 }
 
 .hero-description {
+  width: 20.4375rem;
+  height: 7.6875;
   font-size: 1rem;
   font-style: normal;
   font-weight: 400;
@@ -217,10 +224,15 @@ main {
   height: 2.5rem;
   align-items: center;
   justify-content: space-evenly;
-  margin-top: 1.375rem;
+  margin-top: 0.75rem;
 }
 
 .socials .fa-brands {
+  width: 2.5rem;
+  height: 2.5rem;
   font-size: 1.25rem;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
