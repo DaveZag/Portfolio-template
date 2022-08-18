@@ -19,7 +19,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.5;
-  color: #e5e5e5;
+  background-color: #e5e5e5;
   font-family: "Inter", sans-serif;
 }
 
@@ -30,6 +30,9 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
+}
+h1 {
+  font-family: "Crete Rpund";
 }
 
 img,
@@ -49,12 +52,63 @@ select {
 /* Reusable classes */
 .flex {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.limit {
+  padding-inline: 1.5rem;
 }
 
 /* ..... Header..... */
+
 header {
-  height: 48px;
+  height: 3rem;
   width: 100%;
-  background-color: black;
+  background-color: #3c3a39;
+  color: #fff;
+}
+.logo {
+  font-size: 1.125rem;
+  font-family: "Roboto";
+  font-weight: 700;
+  line-height: 1.5;
+}
+.menu-btn-container {
+  height: 2.5rem;
+  width: 2.5rem;
+  padding: 0.938rem 0.75rem;
+  position: relative;
+  cursor: pointer;
+}
+.menu-btn {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translateX(50%);
+  width: 1.125rem;
+  height: 0.156rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  z-index: 99;
+}
+.menu-btn::before {
+  content: "";
+  position: absolute;
+  top: 0.35rem;
+  right: 0;
+  width: 100%;
+  height: 0.156rem;
+  border-radius: 1rem;
+  background-color: #fff;
+}
+.menu-btn::after {
+  content: "";
+  position: absolute;
+  top: -0.35rem;
+  right: 0;
+  width: 100%;
+  height: 0.156rem;
+  border-radius: 1rem;
+  background-color: #fff;
 }
