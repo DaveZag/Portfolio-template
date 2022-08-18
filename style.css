@@ -5,6 +5,10 @@
 *::after {
   box-sizing: border-box;
 }
+* {
+  padding: 0;
+  margin: 0;
+}
 
 html,
 body {
@@ -15,6 +19,8 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.5;
+  color: #e5e5e5;
+  font-family: "Inter", sans-serif;
 }
 
 ul {
@@ -23,6 +29,7 @@ ul {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 img,
@@ -37,4 +44,17 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+/* Reusable classes */
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ..... Header..... */
+header {
+  height: 48px;
+  width: 100%;
+  background-color: black;
 }
