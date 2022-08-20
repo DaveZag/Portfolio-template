@@ -362,8 +362,7 @@ main {
   color: #fff;
   width: 100%;
   height: 24.125rem;
-  background:
-    linear-gradient(
+  background: linear-gradient(
       180.45deg,
       rgba(38, 38, 38, 0) 0.75%,
       rgba(38, 38, 38, 0.9) 61.94%
@@ -477,4 +476,78 @@ main {
   gap: 0.75rem;
   line-height: 2.75rem;
   font-weight: 700;
+}
+
+/* ............. About Me Section............... */
+
+.contact {
+  width: 100%;
+  height: 100%;
+}
+
+.contact-container {
+  min-height: 52.75rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.contact-first {
+  gap: 3.625rem;
+  padding: 7.75rem 0;
+}
+
+.contact-text h2 {
+  font-size: 2rem;
+  line-height: 2.75rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  text-align: center;
+  color: #172b4d;
+}
+
+.contact-form form {
+  gap: 1.5rem;
+}
+
+form textarea {
+  min-height: 7.125rem;
+  width: 100%;
+}
+
+form input {
+  width: 100%;
+  height: 3rem;
+}
+
+form input[type="text"] {
+  font-size: 15px;
+  height: 3rem;
+  margin-top: 3.625rem;
+}
+
+.contact-btn {
+  width: 100%;
+}
+
+form input[type="submit"] {
+  font-size: 15px;
+  height: 3rem;
+  width: 8.1875rem;
+}
+
+.contact-second {
+  width: 100%;
+  height: auto;
+  background-color: #acacac;
+  margin-bottom: 2rem;
+}
+
+.contact-socials .socials-link i {
+  color: #505f79;
+  font-size: 20px;
+  padding: 1rem;
+}
+
+.contact .socials {
+  display: flex;
+  justify-content: center;
 }
