@@ -135,7 +135,7 @@ select {
 }
 
 .limit {
-  padding-inline: 1.5rem;
+  padding-inline: 1.5rem !important;
 }
 
 .limit-interior {
@@ -290,6 +290,8 @@ main {
   align-items: end;
   justify-items: center;
   width: 100%;
+  margin: 0 auto;
+  max-width: 100vw;
 }
 
 .work-title {
@@ -362,8 +364,7 @@ main {
   color: #fff;
   width: 100%;
   height: 24.125rem;
-  background:
-    linear-gradient(
+  background: linear-gradient(
       180.45deg,
       rgba(38, 38, 38, 0) 0.75%,
       rgba(38, 38, 38, 0.9) 61.94%
