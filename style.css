@@ -135,7 +135,7 @@ select {
 }
 
 .limit {
-  padding-inline: 1.5rem;
+  padding-inline: 1.5rem !important;
 }
 
 .limit-interior {
@@ -290,6 +290,8 @@ main {
   align-items: end;
   justify-items: center;
   width: 100%;
+  margin: 0 auto;
+  max-width: 100vw;
 }
 
 .work-title {
