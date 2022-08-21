@@ -53,6 +53,11 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
+  transition: color 300ms ease-in-out;
+}
+
+a:hover {
+  color: var(--hColor);
 }
 
 h1 {
@@ -569,6 +574,11 @@ form input[type="submit"] {
   color: #505f79;
   font-size: 20px;
   padding: 0.75rem 0.625rem;
+  transition: color 300ms ease-in-out;
+}
+
+.contact-socials .socials-link:hover i {
+  color: var(--hColor);
 }
 
 .contact-socials {
