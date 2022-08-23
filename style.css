@@ -41,7 +41,6 @@ ul {
   border: none;
   text-align: center;
   padding: 0.75rem;
-  /* transition: background 50ms ease-in-out, color 50ms ease-in-out; */
   cursor: pointer;
 }
 
@@ -52,7 +51,7 @@ ul {
 }
 
 .button:disabled {
-  color: #5B5957;
+  color: #5b5957;
   background-color: #f4f1f0;
 }
 
