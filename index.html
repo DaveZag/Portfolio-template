@@ -345,9 +345,9 @@
                 method="POST"
                 class="flex flex-col"
               >
-                <input type="text" name="fullname" placeholder="Full name" />
-                <input type="email" name="email" placeholder="Email address" />
-                <textarea name="message" placeholder="Enter text here"></textarea>
+                <input type="text" name="fullname" placeholder="Full name" maxlength="30" required/>
+                <input type="email" name="email" placeholder="Email address" required/>
+                <textarea name="message" placeholder="Enter text here" maxlength="500" required></textarea>
 
                 <div class="contact-btn flex flex-center">
                   <button type="submit" class="button">Get in touch</button>
