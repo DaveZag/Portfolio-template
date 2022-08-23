@@ -372,7 +372,7 @@ main {
       rgba(38, 38, 38, 0) 0.75%,
       rgba(38, 38, 38, 0.9) 61.94%
     ),
-    url("./assets/images/img2.png");
+    url("assets/images/Img2.png");
   background-size: cover;
   padding-top: 5.25rem;
   margin-bottom: 1.5rem;
