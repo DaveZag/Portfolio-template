@@ -50,6 +50,10 @@ ul {
   outline: 1px solid var(--hColor);
 }
 
+.button:disabled {
+  color: #5b5957;
+  background-color: #f4f1f0;
+}
 
 a {
   text-decoration: none;
