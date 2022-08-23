@@ -41,18 +41,34 @@ ul {
   border: none;
   text-align: center;
   padding: 0.75rem;
-  transition: background 200ms ease-in-out, color 200ms ease-in-out;
   cursor: pointer;
+  transition: background-color 100ms ease-in-out;
 }
 
 .button:hover {
   color: var(--hColor);
-  background-color: #091e42;
+  background-color: #fff;
+  outline: 1px solid var(--hColor);
+}
+
+.button:disabled {
+  color: #5b5957;
+  background-color: #f4f1f0;
+}
+
+.button:active {
+  color: #fff;
+  background-color: #e05304;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+  transition: color 300ms ease-in-out;
+}
+
+a:hover {
+  color: var(--hColor);
 }
 
 h1 {
@@ -222,7 +238,7 @@ main {
 }
 
 .hero-img {
-  background: url("/assets/images/illustration-header-mobile.png"), #1c1a19;
+  background: url("./assets/images/illustration-header-mobile.png"), #1c1a19;
   background-size: calc(20.056rem / 1.9) 26.585rem;
   background-position: 100% calc(40.869959204vh - 7.8539vh), left 100% top 100%;
   background-repeat: no-repeat, no-repeat;
@@ -364,12 +380,7 @@ main {
   color: #fff;
   width: 100%;
   height: 24.125rem;
-  background: linear-gradient(
-      180.45deg,
-      rgba(38, 38, 38, 0) 0.75%,
-      rgba(38, 38, 38, 0.9) 61.94%
-    ),
-    url("/assets/images/img2.png");
+  background: linear-gradient(180.45deg, rgba(38, 38, 38, 0) 0.75%, rgba(38, 38, 38, 0.9) 61.94%), url("./assets/images/img2.png");
   background-size: cover;
   padding-top: 5.25rem;
   margin-bottom: 1.5rem;
@@ -401,9 +412,9 @@ main {
 .about-main-container {
   color: #fff;
   height: 100%;
-  background: url("/assets/images/Frame.svg"), #1c1a19;
+  background: url("./assets/images/Frame.svg"), #1c1a19;
   background-repeat: no-repeat;
-  background-size: 10.299rem 41.334%, contain;
+  background-size: 10.299rem 42.994%, contain;
   background-position: left 100% top 3.396%;
 
   /* background-color: #1c1a19; */
@@ -411,13 +422,14 @@ main {
 
 .about-container {
   height: 35.188rem;
+  margin-top: 7rem;
 }
 
 .about-text {
   gap: 1.5rem;
   height: 100%;
   text-align: left;
-  color: #fff;
+  color: #f4f5f7;
 
   /* margin-top: 120px; */
 }
@@ -425,6 +437,7 @@ main {
 .line img {
   height: 100%;
   margin-top: 5.563rem;
+  width: 100%;
 }
 
 .about-title h1 {
@@ -478,4 +491,109 @@ main {
   gap: 0.75rem;
   line-height: 2.75rem;
   font-weight: 700;
+}
+
+/* ............. About Me Section............... */
+
+.contact {
+  width: 100%;
+  height: 100%;
+}
+
+.contact-container {
+  min-height: 52.75rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.contact-first {
+  gap: 3.625rem;
+  padding: 7.75rem 0;
+}
+
+.contact-text h2 {
+  font-size: 2rem;
+  line-height: 2.75rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  text-align: center;
+  color: #172b4d;
+}
+
+.contact-form form {
+  gap: 1.5rem;
+}
+
+form textarea {
+  min-height: 7.125rem;
+  width: 100%;
+  border: none;
+  font-size: 15px;
+  background: #fbf8f7;
+  padding: 0.5rem 1rem;
+}
+
+form input {
+  width: 100%;
+  height: 3rem;
+  outline: none;
+  border: none;
+  font-size: 15px;
+  border-bottom: 1px solid #dbd8d7;
+  padding: 0.5rem 1rem;
+}
+
+form input[type="text"] {
+  font-size: 15px;
+  height: 3rem;
+  margin-top: 3.625rem;
+}
+
+form textarea::placeholder {
+  color: #050404;
+}
+
+.contact-btn {
+  width: 100%;
+}
+
+form input[type="submit"] {
+  font-size: 15px;
+  height: 3rem;
+  width: 8.1875rem;
+}
+
+.contact-second {
+  width: 100%;
+  height: 4.5rem;
+  margin-bottom: 0.2rem;
+  border-top: 1px solid #dfe1e6;
+  position: relative;
+}
+
+.contact-second::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 0.3125rem;
+  width: 8.375rem;
+  background-color: #091e42;
+  border-radius: 7rem;
+}
+
+.contact-socials .socials-link i {
+  color: #505f79;
+  font-size: 20px;
+  padding: 0.75rem 0.625rem;
+  transition: color 300ms ease-in-out;
+}
+
+.contact-socials .socials-link:hover i {
+  color: var(--hColor);
+}
+
+.contact-socials {
+  height: 2.5rem;
 }
