@@ -372,7 +372,7 @@ main {
       rgba(38, 38, 38, 0) 0.75%,
       rgba(38, 38, 38, 0.9) 61.94%
     ),
-    url("/assets/images/img2.png");
+    url("./assets/images/img2.png");
   background-size: cover;
   padding-top: 5.25rem;
   margin-bottom: 1.5rem;
@@ -404,7 +404,7 @@ main {
 .about-main-container {
   color: #fff;
   height: 100%;
-  background: url("/assets/images/Frame.svg"), #1c1a19;
+  background: url("./assets/images/Frame.svg"), #1c1a19;
   background-repeat: no-repeat;
   background-size: 10.299rem 42.994%, contain;
   background-position: left 100% top 3.396%;
@@ -421,7 +421,7 @@ main {
   gap: 1.5rem;
   height: 100%;
   text-align: left;
-  color: #fff;
+  color: #f4f5f7;
 
   /* margin-top: 120px; */
 }
@@ -521,7 +521,7 @@ form textarea {
   width: 100%;
   border: none;
   font-size: 15px;
-  background: #fbf8f7;;
+  background: #fbf8f7;
   padding: 0.5rem 1rem;
 }
 
