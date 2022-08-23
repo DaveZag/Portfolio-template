@@ -329,24 +329,28 @@
 
       <!-- ================== About Me Section ================= -->
 
-      <section class="contact limit">
+      <section class="contact">
         <div class="contact-container flex flex-col">
           <div class="contact-first flex flex-col">
-            <div class="contact-text">
+            <div class="contact-text limit">
               <h2>
                 I'm always interested in hearing about new projects, so if you'd like
                 to chat please get in touch.
               </h2>
             </div>
 
-            <div class="contact-form">
-              <form action="#" method="post" class="flex flex-col">
-                <input type="text" placeholder="Fullname" />
+            <div class="contact-form limit">
+              <form
+                action="https://formspree.io/f/xoqbvjnd"
+                method="POST"
+                class="flex flex-col"
+              >
+                <input type="text" name="fullname" placeholder="Full name" />
                 <input type="email" name="email" placeholder="Email address" />
-                <textarea name="comment" placeholder="Enter text here"></textarea>
+                <textarea name="message" placeholder="Enter text here"></textarea>
 
                 <div class="contact-btn flex flex-center">
-                  <input type="submit" class="button" />
+                  <button type="submit" class="button">Get in touch</button>
                 </div>
               </form>
             </div>

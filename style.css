@@ -367,8 +367,7 @@ main {
   color: #fff;
   width: 100%;
   height: 24.125rem;
-  background:
-    linear-gradient(
+  background: linear-gradient(
       180.45deg,
       rgba(38, 38, 38, 0) 0.75%,
       rgba(38, 38, 38, 0.9) 61.94%
@@ -407,7 +406,7 @@ main {
   height: 100%;
   background: url("/assets/images/Frame.svg"), #1c1a19;
   background-repeat: no-repeat;
-  background-size: 10.299rem 41.334%, contain;
+  background-size: 10.299rem 42.994%, contain;
   background-position: left 100% top 3.396%;
 
   /* background-color: #1c1a19; */
@@ -415,6 +414,7 @@ main {
 
 .about-container {
   height: 35.188rem;
+  margin-top: 7rem;
 }
 
 .about-text {
@@ -429,6 +429,7 @@ main {
 .line img {
   height: 100%;
   margin-top: 5.563rem;
+  width: 100%;
 }
 
 .about-title h1 {
@@ -538,6 +539,10 @@ form input[type="text"] {
   font-size: 15px;
   height: 3rem;
   margin-top: 3.625rem;
+}
+
+form textarea::placeholder {
+  color: #050404;
 }
 
 .contact-btn {
