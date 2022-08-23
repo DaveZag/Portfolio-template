@@ -227,7 +227,7 @@ main {
 }
 
 .hero-img {
-  background: url("/assets/images/illustration-header-mobile.png"), #1c1a19;
+  background: url("./assets/images/illustration-header-mobile.png"), #1c1a19;
   background-size: calc(20.056rem / 1.9) 26.585rem;
   background-position: 100% calc(40.869959204vh - 7.8539vh), left 100% top 100%;
   background-repeat: no-repeat, no-repeat;
