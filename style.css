@@ -42,6 +42,7 @@ ul {
   text-align: center;
   padding: 0.75rem;
   cursor: pointer;
+  transition: background-color 100ms ease-in-out;
 }
 
 .button:hover {
@@ -50,6 +51,15 @@ ul {
   outline: 1px solid var(--hColor);
 }
 
+.button:disabled {
+  color: #5b5957;
+  background-color: #f4f1f0;
+}
+
+.button:active{
+  color: #fff;
+  background-color: #e05304;
+}
 
 a {
   text-decoration: none;
