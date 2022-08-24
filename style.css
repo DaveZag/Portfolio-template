@@ -151,7 +151,7 @@ select {
 }
 
 .limit {
-  padding-inline: 1.5rem !important;
+  padding-inline: 1.5rem;
 }
 
 .limit-interior {
@@ -172,9 +172,13 @@ header.limit {
 }
 
 .logo {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   font-family: "Roboto", sans-serif;
   font-weight: 700;
+}
+
+.nav-links {
+  display: none;
 }
 
 .menu-btn-container {
@@ -305,6 +309,7 @@ main {
   gap: 1.5em;
   align-items: end;
   justify-items: center;
+  justify-content: center;
   width: 100%;
   margin: 0 auto;
   max-width: 100vw;
@@ -380,7 +385,12 @@ main {
   color: #fff;
   width: 100%;
   height: 24.125rem;
-  background: linear-gradient(180.45deg, rgba(38, 38, 38, 0) 0.75%, rgba(38, 38, 38, 0.9) 61.94%), url("./assets/images/img2.png");
+  background: linear-gradient(
+      180.45deg,
+      rgba(38, 38, 38, 0) 0.75%,
+      rgba(38, 38, 38, 0.9) 61.94%
+    ),
+    url("./assets/images/img2.png");
   background-size: cover;
   padding-top: 5.25rem;
   margin-bottom: 1.5rem;
@@ -596,4 +606,200 @@ form input[type="submit"] {
 
 .contact-socials {
   height: 2.5rem;
+}
+
+/*............. Media queries ...............*/
+
+@media screen and (min-width: 768px) {
+  .limit {
+    padding-inline: 0rem;
+  }
+
+  .limit-desk {
+    padding-inline: 8.9375rem;
+  }
+
+  /* Header */
+
+  .menu-btn-container {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+  }
+
+  .nav-link:hover {
+    cursor: pointer;
+  }
+
+  .nav-link:last-child {
+    margin-left: 2.0625rem;
+    margin-right: 9.4375rem;
+  }
+
+  .nav-link:last-child i {
+    width: 1.375rem;
+    font-size: 1.125rem;
+  }
+
+  /* Hero section */
+
+  .hero {
+    padding: 0;
+    width: 100%;
+    min-height: 47.9rem;
+    margin: 0;
+  }
+
+  .hero-img {
+    background: url("./assets/images/illustration-header-desktop.svg"), #1c1a19;
+    background-size: 52% 109.9%;
+    background-position: right bottom 26px;
+    background-repeat: no-repeat, no-repeat;
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-headline {
+    width: 35.375rem;
+    margin-left: calc(8.9375rem - 7.9375rem);
+  }
+
+  .hero-title h1 {
+    font-size: 4.5rem;
+    line-height: 5.09375rem;
+  }
+  .hero-title h3 {
+    font-size: 2rem;
+    line-height: 2.75rem;
+  }
+  .hero-title p {
+    font-size: 1.25rem;
+    line-height: 2rem;
+  }
+
+  .hero .socials {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    /* background-color: #e05304; */
+    height: auto;
+    margin: 0;
+  }
+
+  .hero .socials i {
+    font-size: 1.25rem;
+    padding-left: 2.25rem;
+    margin-right: 5.4375rem;
+  }
+
+  /* Work section */
+
+  .work {
+    padding-top: 8.4375rem;
+  }
+
+  .grid {
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main-article {
+    flex-direction: row;
+    flex: 1;
+    gap: 24px;
+    width: 100%;
+    grid-column: 1 / span 3;
+    margin: 0;
+    height: 28rem;
+    align-items: flex-start;
+  }
+
+  .article-block {
+    width: 50%;
+  }
+
+  .article-desc {
+    font-size: 1.25rem;
+  }
+
+  .article-img {
+    width: 50%;
+    height: auto;
+  }
+
+  .work-card {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .work-card:nth-child(2) {
+    background: url("./assets/images/card-desktop1.svg");
+    background-size: cover;
+  }
+
+  .work-card:nth-child(2) .card-article {
+    display: none;
+  }
+
+  .work-card:not(:nth-child(2)) .button {
+    display: none;
+  }
+
+  .work-card:nth-child(3) h2,
+  .work-card:nth-child(6) h2 {
+    visibility: hidden;
+    position: relative;
+  }
+
+  .work-card:nth-child(3) h2::after,
+  .work-card:nth-child(6) h2::after {
+    content: "Data Dashboard Healthcare";
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: visible;
+  }
+
+  .work-card:nth-child(5) {
+    background: linear-gradient(
+        180.45deg,
+        rgba(38, 38, 38, 0) 0.75%,
+        rgba(38, 38, 38, 0.9) 84.18%
+      ),
+      url("./assets/images/card-desktop1.svg");
+    background-size: cover;
+  }
+
+  .work-card:nth-child(3),
+  .work-card:nth-child(6) {
+    background: linear-gradient(
+        179.35deg,
+        rgba(38, 38, 38, 0) 0.85%,
+        rgba(38, 38, 38, 0.9) 84%
+      ),
+      url("./assets/images/card-desktop2.svg");
+    background-size: cover;
+  }
+
+  .work-card:nth-child(4),
+  .work-card:nth-child(7) {
+    background: linear-gradient(
+        179.4deg,
+        rgba(38, 38, 38, 0) 0.81%,
+        rgba(38, 38, 38, 0.9) 84.03%
+      ),
+      url("./assets/images/card-desktop3.svg");
+    background-size: cover;
+  }
 }
