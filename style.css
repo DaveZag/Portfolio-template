@@ -16,6 +16,7 @@ body {
   height: 100%;
   width: 100%;
   font-size: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -42,12 +43,12 @@ ul {
   text-align: center;
   padding: 0.75rem;
   cursor: pointer;
-  transition: background-color 100ms ease-in-out;
+  transition: background-color 120ms ease-in-out;
 }
 
 .button:hover {
   color: var(--hColor);
-  background-color: #fff;
+  background-color: #fff5e1;
   outline: 1px solid var(--hColor);
 }
 
@@ -389,12 +390,7 @@ main {
   color: #fff;
   width: 100%;
   height: 24.125rem;
-  background: linear-gradient(
-      180.45deg,
-      rgba(38, 38, 38, 0) 0.75%,
-      rgba(38, 38, 38, 0.9) 61.94%
-    ),
-    url("./assets/images/img2.png");
+  background: linear-gradient(180.45deg, rgba(38, 38, 38, 0) 0.75%, rgba(38, 38, 38, 0.9) 61.94%), url("./assets/images/img2.png");
   background-size: cover;
   padding-top: 5.25rem;
   margin-bottom: 1.5rem;
@@ -430,8 +426,6 @@ main {
   background-repeat: no-repeat;
   background-size: 10.299rem 42.994%, contain;
   background-position: left 100% top 3.396%;
-
-  /* background-color: #1c1a19; */
 }
 
 .about-container {
@@ -444,8 +438,6 @@ main {
   height: 100%;
   text-align: left;
   color: #f4f5f7;
-
-  /* margin-top: 120px; */
 }
 
 .line img {
@@ -465,7 +457,12 @@ main {
 
 .about-btn:hover {
   color: var(--hColor);
-  background-color: #fff;
+  background-color: #fff5e1;
+}
+
+.about-btn:active {
+  color: #fff;
+  background-color: #e05304;
 }
 
 .second-container {
@@ -507,7 +504,7 @@ main {
   font-weight: 700;
 }
 
-/* ............. About Me Section............... */
+/* ............. Contact Section............... */
 
 .contact {
   width: 100%;
@@ -612,11 +609,10 @@ form input[type="submit"] {
   height: 2.5rem;
 }
 
-/*............. Media queries ...............*/
-
+/* ............. Media queries ............... */
 @media screen and (min-width: 768px) {
   .limit {
-    padding-inline: 0rem;
+    padding-inline: 0;
   }
 
   .limit-desk {
@@ -685,10 +681,12 @@ form input[type="submit"] {
     font-size: 4.5rem;
     line-height: 5.09375rem;
   }
+
   .hero-title h3 {
     font-size: 2rem;
     line-height: 2.75rem;
   }
+
   .hero-title p {
     font-size: 1.25rem;
     line-height: 2rem;
@@ -708,7 +706,7 @@ form input[type="submit"] {
     color: #fff;
   }
 
-  .hero .socials i {
+  .hero .hero-text .socials i {
     font-size: 1.25rem;
     padding-left: 2.25rem;
     margin-right: 5.4375rem;
@@ -806,34 +804,19 @@ form input[type="submit"] {
   }
 
   .work-card:nth-child(5) {
-    background: linear-gradient(
-        180.45deg,
-        rgba(38, 38, 38, 0) 0.75%,
-        rgba(38, 38, 38, 0.9) 84.18%
-      ),
-      url("./assets/images/card-desktop1.svg");
+    background: linear-gradient(180.45deg, rgba(38, 38, 38, 0) 0.75%, rgba(38, 38, 38, 0.9) 84.18%), url("./assets/images/card-desktop1.svg");
     background-size: cover;
   }
 
   .work-card:nth-child(3),
   .work-card:nth-child(6) {
-    background: linear-gradient(
-        179.35deg,
-        rgba(38, 38, 38, 0) 0.85%,
-        rgba(38, 38, 38, 0.9) 84%
-      ),
-      url("./assets/images/card-desktop2.svg");
+    background: linear-gradient(179.35deg, rgba(38, 38, 38, 0) 0.85%, rgba(38, 38, 38, 0.9) 84%), url("./assets/images/card-desktop2.svg");
     background-size: cover;
   }
 
   .work-card:nth-child(4),
   .work-card:nth-child(7) {
-    background: linear-gradient(
-        179.4deg,
-        rgba(38, 38, 38, 0) 0.81%,
-        rgba(38, 38, 38, 0.9) 84.03%
-      ),
-      url("./assets/images/card-desktop3.svg");
+    background: linear-gradient(179.4deg, rgba(38, 38, 38, 0) 0.81%, rgba(38, 38, 38, 0.9) 84.03%), url("./assets/images/card-desktop3.svg");
     background-size: cover;
   }
 
@@ -842,8 +825,9 @@ form input[type="submit"] {
   .about-main-container {
     background: url("./assets/images/aboutMe-img.svg"), #1c1a19;
     background-repeat: no-repeat;
-    background-position: left 100% top 6.8%;
+    background-position: left 100% top 11.8%;
   }
+
   .about-container {
     width: 35.375rem;
     padding-top: 8.125rem;
