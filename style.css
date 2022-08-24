@@ -445,7 +445,7 @@ main {
 }
 
 .line img {
-  height: 100%;
+  height: auto;
   margin-top: 5.563rem;
   width: 100%;
 }
@@ -771,6 +771,21 @@ form input[type="submit"] {
     visibility: visible;
   }
 
+  .work-card:nth-child(4) h2,
+  .work-card:nth-child(7) h2 {
+    visibility: hidden;
+    position: relative;
+  }
+
+  .work-card:nth-child(4) h2::after,
+  .work-card:nth-child(7) h2::after {
+    content: "Website Protfolio";
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: visible;
+  }
+
   .work-card:nth-child(5) {
     background: linear-gradient(
         180.45deg,
@@ -801,5 +816,23 @@ form input[type="submit"] {
       ),
       url("./assets/images/card-desktop3.svg");
     background-size: cover;
+  }
+
+  .about-main-container {
+    background: url("./assets/images/aboutMe-img.svg"), #1c1a19;
+    background-repeat: no-repeat;
+    background-position: left 100% top 6.8%;
+  }
+  .about-container {
+    width: 35.375rem;
+    padding-top: 8.125rem;
+  }
+
+  .about-desc {
+    font-size: 1.25rem;
+  }
+
+  .line img {
+    height: 0.5625rem;
   }
 }
