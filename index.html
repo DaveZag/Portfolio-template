@@ -20,15 +20,15 @@
   <body>
     <!-- ================== Header ====================== -->
 
-    <header class="flex between limit">
+    <header class="flex between limit limit-desk">
       <div class="logo">
         <p><a href="index.html">John Doe</a></p>
       </div>
       <nav>
         <ul class="nav-links">
-          <li class="nav-link"><a href="#">Portfolio</a></li>
-          <li class="nav-link"><a href="#">About</a></li>
-          <li class="nav-link"><a href="#">Contact</a></li>
+          <li class="nav-link"><a href="#portfolio">Portfolio</a></li>
+          <li class="nav-link"><a href="#about">About</a></li>
+          <li class="nav-link"><a href="#contact">Contact</a></li>
           <li class="nav-link">
             <i class="fa-solid fa-envelope"><a href="#"></a></i>
           </li>
@@ -93,7 +93,7 @@
 
       <!-- ================== Work Section Mobile ================= -->
 
-      <section class="work">
+      <section class="work" id="portfolio">
         <div class="work-container limit limit-desk">
           <div class="work-title">
             <h2>My Recent Works</h2>
@@ -266,7 +266,7 @@
 
       <!-- ================== About Me Section ================= -->
 
-      <section class="about">
+      <section class="about" id="about">
         <div class="about-main-container limit limit-desk">
           <div class="about-container flex flex-col">
             <div class="about-text flex flex-col start-col">
@@ -337,19 +337,19 @@
         </div>
       </section>
 
-      <!-- ================== About Me Section ================= -->
+      <!-- ================== Contact Section ================= -->
 
-      <section class="contact">
+      <section class="contact" id="contact">
         <div class="contact-container flex flex-col">
-          <div class="contact-first flex flex-col">
-            <div class="contact-text limit">
+          <div class="contact-first flex flex-col limit-desk">
+            <div class="contact-text">
               <h2>
                 I'm always interested in hearing about new projects, so if you'd like
                 to chat please get in touch.
               </h2>
             </div>
 
-            <div class="contact-form limit">
+            <div class="contact-form">
               <form
                 action="https://formspree.io/f/xoqbvjnd"
                 method="POST"
@@ -358,10 +358,29 @@
                 <input
                   type="text"
                   name="fullname"
+                  class="hid-desk"
                   placeholder="Full name"
                   maxlength="30"
                   required
                 />
+                <div class="input-name">
+                  <input
+                    type="text"
+                    name="firstname"
+                    class="hid-mob"
+                    placeholder="First name"
+                    maxlength="30"
+                    required
+                  />
+                  <input
+                    type="text"
+                    name="Last name"
+                    class="hid-mob"
+                    placeholder="Last name"
+                    maxlength="30"
+                    required
+                  />
+                </div>
                 <input
                   type="email"
                   name="email"
