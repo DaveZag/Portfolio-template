@@ -609,7 +609,15 @@ form input[type="submit"] {
   height: 2.5rem;
 }
 
-/* ............. Media queries ............... */
+/* ............................... Media queries ................................ */
+@media screen and (max-width:375px){
+  .hero-img {
+    background-position: right bottom -11.9%;
+    /* background-size: 30.1333% 56.9333%; */
+    background-size: 39.1333% 59.9333%;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .limit {
     padding-inline: 0;
@@ -659,7 +667,7 @@ form input[type="submit"] {
 
   .hero-img {
     background: url("./assets/images/illustration-header-desktop.svg"), #1c1a19;
-    background-size: 52% 109.9%;
+    background-size: 40% 104.9%;
     background-position: right bottom 26px;
     background-repeat: no-repeat, no-repeat;
   }
@@ -672,8 +680,9 @@ form input[type="submit"] {
     width: 100%;
   }
 
+
   .hero-headline {
-    width: 35.375rem;
+    width: 39.3056%;
     margin-left: calc(8.9375rem - 7.9375rem);
   }
 
@@ -942,4 +951,8 @@ form input[type="submit"] {
   .contact-second::after {
     display: none;
   }
+}
+
+@media screen and (min-width:768px) and (max-width: ){
+  
 }
