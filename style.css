@@ -158,6 +158,10 @@ select {
   padding-inline: 1.5rem;
 }
 
+.limit-desk {
+  padding-inline: 0;
+}
+
 .limit-interior {
   padding-inline: 1rem;
 }
@@ -532,6 +536,7 @@ main {
   font-weight: 700;
   text-align: center;
   color: #172b4d;
+  margin-bottom: 3.625rem;
 }
 
 .contact-form form {
@@ -560,7 +565,6 @@ form input {
 form input[type="text"] {
   font-size: 15px;
   height: 3rem;
-  margin-top: 3.625rem;
 }
 
 form textarea::placeholder {
@@ -946,6 +950,7 @@ form input[type="submit"] {
     grid-template-columns: 1fr 55%;
     height: auto;
     padding-block: 1rem;
+    border-top: 2px solid rgb(223, 225, 230);
   }
 
   .contact-second ul {
