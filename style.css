@@ -755,25 +755,29 @@ form input[type="submit"] {
   }
 
   .grid {
-    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    grid-template: repeat(3, 27.1875rem) / repeat(3, 1fr);
     align-items: center;
     justify-content: center;
     width: 100vw;
+    height: 100%;
   }
 
   .main-article {
     flex-direction: row;
     flex: 1;
-    gap: 24px;
+    gap: 1.5rem;
     width: 100%;
     grid-column: 1 / span 3;
-    margin: 0;
+    margin-top: 7rem;
     height: 28rem;
     align-items: flex-start;
   }
 
   .article-block {
-    width: 50%;
+    width: 37%;
+    gap: 1.5rem;
+    justify-content: flex-start;
+    padding: 0;
   }
 
   .article-desc {
@@ -781,27 +785,35 @@ form input[type="submit"] {
   }
 
   .article-img {
-    width: 50%;
-    height: auto;
+    width: 63%;
+    height: 100%;
   }
 
   .work-card {
-    height: 100%;
-    margin: 0;
+    margin-top: 8rem;
     padding: 0;
+    position: relative;
+    overflow: hidden;
+    height: 27.1875rem;
   }
 
-  .work-card:nth-child(2) {
-    background: url("./assets/images/card-desktop1.svg");
-    background-size: cover;
+  .work-card:hover {
+    cursor: pointer;
   }
 
-  .work-card:nth-child(2) .card-article {
+  .work-card:hover .card-block {
+    transition: all 700ms ease-in-out;
+    animation: remove 700ms ease-in-out forwards;
+  }
+
+  .work-card .button {
     display: none;
+    position: relative;
   }
 
-  .work-card:not(:nth-child(2)) .button {
-    display: none;
+  .work-card:hover .button {
+    display: block;
+    animation: ShowBtn 350ms ease-in-out forwards;
   }
 
   .work-card:nth-child(3) h2,
@@ -834,20 +846,39 @@ form input[type="submit"] {
     visibility: visible;
   }
 
-  .work-card:nth-child(5) {
-    background: linear-gradient(180.45deg, rgba(38, 38, 38, 0) 0.75%, rgba(38, 38, 38, 0.9) 84.18%), url("./assets/images/card-desktop1.svg");
+  .work .work-card:nth-child(5),
+  .work .work-card:nth-child(2) {
+    background: linear-gradient(179.4deg, rgba(38, 38, 38, 0) 0.81%, rgba(38, 38, 38, 0.9) 84.03%), url("./assets/images/card-desktop1.svg");
     background-size: cover;
   }
 
-  .work-card:nth-child(3),
-  .work-card:nth-child(6) {
+  .work-card:nth-child(5):hover,
+  .work-card:nth-child(2):hover {
+    background: url("./assets/images/card-desktop1.svg");
+    background-size: cover;
+  }
+
+  .work .work-card:nth-child(3),
+  .work .work-card:nth-child(6) {
     background: linear-gradient(179.35deg, rgba(38, 38, 38, 0) 0.85%, rgba(38, 38, 38, 0.9) 84%), url("./assets/images/card-desktop2.svg");
     background-size: cover;
   }
 
-  .work-card:nth-child(4),
-  .work-card:nth-child(7) {
+  .work-card:nth-child(3):hover,
+  .work-card:nth-child(6):hover {
+    background: url("./assets/images/card-desktop2.svg");
+    background-size: cover;
+  }
+
+  .work .work-card:nth-child(4),
+  .work .work-card:nth-child(7) {
     background: linear-gradient(179.4deg, rgba(38, 38, 38, 0) 0.81%, rgba(38, 38, 38, 0.9) 84.03%), url("./assets/images/card-desktop3.svg");
+    background-size: cover;
+  }
+
+  .work-card:nth-child(4):hover,
+  .work-card:nth-child(7):hover {
+    background: url("./assets/images/card-desktop3.svg");
     background-size: cover;
   }
 
@@ -912,24 +943,32 @@ form input[type="submit"] {
     flex-direction: row;
     min-height: 36.875rem;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    gap: 1.5rem;
   }
 
   .contact-text {
-    width: 40%;
+    width: 35%;
+  }
+
+  .contact-first .contact-text h2 {
+    text-align: left;
+    font-size: 2.5rem;
+    line-height: 3.25rem;
   }
 
   .contact-form {
-    width: 60%;
+    width: 65%;
   }
 
   .contact-form form {
     display: grid;
     justify-content: flex-start;
     align-items: flex-end;
-    grid-template: auto auto auto fit-content/ 1fr 1fr;
+    grid-template: auto auto auto 1fr/ 1fr 1fr;
     min-height: 20.625rem;
     width: 100%;
+    position: relative;
   }
 
   .contact-form form input[type="text"] {
@@ -953,7 +992,7 @@ form input[type="submit"] {
   }
 
   .contact-btn {
-    width: auto;
+    width: fit-content;
   }
 
   .contact-second {
@@ -973,6 +1012,36 @@ form input[type="submit"] {
 
   .contact-second::after {
     display: none;
+  }
+
+  @keyframes remove {
+    from {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    to {
+      position: absolute;
+      bottom: -120%;
+      left: 0;
+      opacity: 0;
+    }
+  }
+
+  @keyframes ShowBtn {
+    from {
+      position: absolute;
+      bottom: -120%;
+      left: 0;
+      opacity: 0;
+    }
+
+    to {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
   }
 }
 
