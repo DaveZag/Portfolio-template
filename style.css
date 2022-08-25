@@ -977,10 +977,6 @@ form input[type="submit"] {
     margin: 0;
   }
 
-  .contact-form form input[type="text"]::placeholder {
-    display: none;
-  }
-
   .contact-form form .input-name {
     grid-column: 1 / span 3;
     display: flex;
