@@ -610,10 +610,9 @@ form input[type="submit"] {
 }
 
 /* ............................... Media queries ................................ */
-@media screen and (max-width:375px){
+@media screen and (max-width: 375px) {
   .hero-img {
     background-position: right bottom -11.9%;
-    /* background-size: 30.1333% 56.9333%; */
     background-size: 39.1333% 59.9333%;
   }
 }
@@ -624,7 +623,7 @@ form input[type="submit"] {
   }
 
   .limit-desk {
-    padding-inline: 8.9375rem;
+    padding-inline: 9.9306%;
   }
 
   /* Header */
@@ -680,7 +679,6 @@ form input[type="submit"] {
     width: 100%;
   }
 
-
   .hero-headline {
     width: 39.3056%;
     margin-left: calc(8.9375rem - 7.9375rem);
@@ -733,10 +731,34 @@ form input[type="submit"] {
     padding-top: 8.4375rem;
   }
 
+  .work-title {
+    border: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    width: 100%;
+    margin: 0;
+  }
+
+  .work-title span {
+    height: 0.1rem;
+    width: 100%;
+    background-color: #050404;
+  }
+
+  .work-title h2 {
+    border: none;
+    min-width: fit-content;
+  }
+
   .grid {
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
     align-items: center;
     justify-content: center;
+    width: 100vw;
   }
 
   .main-article {
@@ -834,7 +856,8 @@ form input[type="submit"] {
   .about-main-container {
     background: url("./assets/images/aboutMe-img.svg"), #1c1a19;
     background-repeat: no-repeat;
-    background-position: left 100% top 11.8%;
+    background-position: left 109% top 14.8%;
+    background-size: 49.75% 29.5208%;
   }
 
   .about-container {
@@ -953,6 +976,9 @@ form input[type="submit"] {
   }
 }
 
-@media screen and (min-width:768px) and (max-width: ){
-  
+@media screen and (min-width: 768px) and (max-width: 1150px) {
+  .about-main-container {
+    background-position: left 109% top 35.8%;
+    background-size: 45.75% 29.5208%;
+  }
 }
