@@ -662,6 +662,8 @@ form input[type="submit"] {
     width: 100%;
     min-height: 47.9rem;
     margin: 0;
+    position: relative;
+    overflow: hidden;
   }
 
   .hero-img {
@@ -695,9 +697,10 @@ form input[type="submit"] {
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 0.1rem;
-    background-color: red;
-    animation: redline 2s ease-in-out;
+    height: 0.3rem;
+    background-color: var(--hColor);
+    animation: redline 3s ease-in-out infinite 500ms;
+    animation-iteration-count: 2;
   }
 
   .hero-title h3 {
@@ -705,7 +708,21 @@ form input[type="submit"] {
     line-height: 2.75rem;
   }
 
-  .hero-title p {
+  .hero-title h3::after {
+    content: "";
+    position: absolute;
+    top: 8rem;
+    right: 8rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: linear-gradient(to right, var(--hColor) 50%, rgb(255, 255, 255) 9%);
+    animation: rotate 1s linear infinite, collide 4s linear 2;
+    animation-delay: 6.5s;
+    opacity: 0;
+  }
+
+  .hero-headline p {
     font-size: 1.25rem;
     line-height: 2rem;
   }
@@ -1061,11 +1078,40 @@ form input[type="submit"] {
     }
 
     50% {
-      width: 100%;
+      width: 10rem;
     }
 
     to {
       width: 0;
+    }
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes collide {
+    form {
+      right: 8rem;
+    }
+
+    20% {
+      opacity: 80%;
+    }
+
+    50% {
+      right: 12.16rem;
+      opacity: 100%;
+    }
+
+    to {
+      right: 8rem;
     }
   }
 }
