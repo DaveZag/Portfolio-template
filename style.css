@@ -695,14 +695,28 @@ form input[type="submit"] {
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 0.1rem;
-    background-color: red;
-    animation: redline 2s ease-in-out;
+    height: 0.3rem;
+    background-color: var(--hColor);
+    animation: redline 3s ease-in-out infinite 1s;
+    animation-iteration-count: 3, 2, infinite;
   }
 
   .hero-title h3 {
     font-size: 2rem;
     line-height: 2.75rem;
+  }
+
+  .hero-title h3::after {
+    content: "";
+    position: absolute;
+    top: 8rem;
+    right: 8rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: linear-gradient(to right, var(--hColor) 50%, rgb(255, 255, 255) 9%);
+    animation: rotate 1s linear infinite, collide 4s linear 4;
+    opacity: 0;
   }
 
   .hero-title p {
@@ -1061,11 +1075,40 @@ form input[type="submit"] {
     }
 
     50% {
-      width: 100%;
+      width: 10rem;
     }
 
     to {
       width: 0;
+    }
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes collide {
+    form {
+      right: 8rem;
+    }
+
+    20% {
+      opacity: 80%;
+    }
+
+    50% {
+      right: 12.16rem;
+      opacity: 100%;
+    }
+
+    to {
+      right: 8rem;
     }
   }
 }
