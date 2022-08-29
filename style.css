@@ -717,7 +717,7 @@ form input[type="submit"] {
     height: 2rem;
     border-radius: 50%;
     background: linear-gradient(to right, var(--hColor) 50%, rgb(255, 255, 255) 9%);
-    animation: rotate 1s linear infinite, collide 4s linear 2;
+    animation: rotate 1s linear infinite, collide 4s linear 4;
     animation-delay: 6.5s;
     opacity: 0;
   }
