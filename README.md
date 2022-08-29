@@ -6,6 +6,10 @@
 > This is a replica of a personal portfolio website from microverse full stack program( [template 2](https://www.figma.com/file/l7SqJ3ZfkAKih9sFxvWSR4/Microverse-Student-Project-1?node-id=48%3A27)). \
 > It is built using the mobile-first approach.
 
+## Live link
+
+Follow this link to visit my [Portfolio](https://davezag.github.io/Portfolio-setup-and-mobile-first/).
+
 ## Built With
 
 - HTML and CSS
