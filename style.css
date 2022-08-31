@@ -582,6 +582,11 @@ form input[type="submit"] {
   position: relative;
 }
 
+.contact-form form input:focus,
+.contact-form form textarea:focus {
+  outline: 1px solid var(--hColor);
+}
+
 .contact-second::after {
   content: "";
   position: absolute;
