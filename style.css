@@ -170,7 +170,7 @@ select {
 /* ............. Header............... */
 
 header.limit {
-  height: 7.4539vh;
+  min-height: 7.4539vh;
   width: 100%;
   background-color: #3c3a39;
   color: #fff;
@@ -237,8 +237,11 @@ main {
 
 .hero {
   width: 100%;
-  height: calc(100vh - 7.4539vh);
+  min-height: calc(100vh - 7.4539vh);
   margin-bottom: 7.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-container {
@@ -716,7 +719,7 @@ form input[type="submit"] {
   .hero-title h3::after {
     content: "";
     position: absolute;
-    top: 8rem;
+    top: -6rem;
     right: 8rem;
     width: 2rem;
     height: 2rem;
