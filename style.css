@@ -285,6 +285,7 @@ header.limit {
   background-color: #fff;
   border-radius: 1rem;
   z-index: 100;
+  transition: all 500ms ease-in-out;
 }
 
 .menu-btn::before {
@@ -307,6 +308,22 @@ header.limit {
   height: 2px;
   border-radius: 1rem;
   background-color: rgb(255, 255, 255);
+}
+
+.menu-active {
+  background-color: transparent;
+  transform: rotate(360deg);
+  transition: all 500ms ease-in-out;
+}
+
+.menu-active::before {
+  transform: rotate(-45deg) translate(5px, 3px);
+  transition: transform 500ms ease-in-out;
+}
+
+.menu-active::after {
+  transform: rotate(45deg) translate(11px, 3px);
+  transition: transform 500ms ease-in-out;
 }
 
 /* ............. Hero Section............... */
