@@ -30,7 +30,7 @@ To get a local copy up and running follow these simple example steps.
 - Download or clone the folder to your local machine;
 - Open the index.html file in the browser.
 
-## Authors
+## Author
 
 👤 **Dave ZAGABE**
 

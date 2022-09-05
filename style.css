@@ -141,6 +141,11 @@ select {
   align-items: center;
 }
 
+.end-row {
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .end-col-left {
   align-items: flex-start;
   justify-content: flex-end;
@@ -174,6 +179,7 @@ header.limit {
   width: 100%;
   background-color: #3c3a39;
   color: #fff;
+  position: relative;
 }
 
 .logo {
@@ -182,28 +188,104 @@ header.limit {
   font-weight: 700;
 }
 
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: #e5e5e5;
+  transform: translateX(100%);
+  transition: all 500ms ease-in-out;
+}
+
+.bottom-line {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.bottom-line::after {
+  content: "";
+  position: absolute;
+  bottom: 0.21%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8.375rem;
+  height: 0.3125rem;
+  background-color: #050404;
+  border-radius: 5rem;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.show-menu {
+  transform: translateX(0);
+}
+
 .nav-links {
+  padding: 2rem 1.5rem;
+  font-size: 1.5rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  line-height: 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 90%;
+  background-color: #3c3a39;
+}
+
+.nav-link {
+  position: relative;
+  padding-inline: 0.81rem;
+  padding-bottom: 0.5rem;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #dfe1e6;
+}
+
+.nav-link:first-child {
+  margin-top: 3rem;
+}
+
+.nav-link:last-child {
   display: none;
 }
 
 .menu-btn-container {
-  height: 2.5rem;
-  width: 2.5rem;
-  padding: 0.938rem 0.75rem;
-  position: relative;
+  height: 33%;
+  width: fit-content;
+  position: absolute;
+  margin-left: 9.5rem;
+  top: 50%;
+  right: 1.5rem;
+  transform: translateY(-50%);
   cursor: pointer;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu-btn {
-  position: absolute;
-  top: 50%;
-  right: 50%;
-  transform: translateX(50%);
-  width: 1.315rem;
-  height: 0.156rem;
+  position: relative;
+  width: 1.4rem;
+  height: 2px;
   background-color: #fff;
   border-radius: 1rem;
-  z-index: 99;
+  z-index: 100;
+  transition: all 500ms ease-in-out;
 }
 
 .menu-btn::before {
@@ -211,8 +293,8 @@ header.limit {
   position: absolute;
   top: 0.35rem;
   right: 0;
-  width: 100%;
-  height: inherit;
+  width: 1.4rem;
+  height: 2px;
   border-radius: 1rem;
   background-color: #fff;
 }
@@ -222,10 +304,26 @@ header.limit {
   position: absolute;
   top: -0.35rem;
   right: 0;
-  width: 100%;
-  height: inherit;
+  width: 1.4rem;
+  height: 2px;
   border-radius: 1rem;
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
+}
+
+.menu-active {
+  background-color: transparent;
+  transform: rotate(360deg);
+  transition: all 500ms ease-in-out;
+}
+
+.menu-active::before {
+  transform: rotate(-45deg) translate(5px, 3px);
+  transition: transform 500ms ease-in-out;
+}
+
+.menu-active::after {
+  transform: rotate(45deg) translate(11px, 3px);
+  transition: transform 500ms ease-in-out;
 }
 
 /* ............. Hero Section............... */
@@ -636,21 +734,66 @@ form input[type="submit"] {
 
   /* Header */
 
+  .logo {
+    min-width: fit-content;
+  }
+
   .menu-btn-container {
     display: none;
   }
 
   .nav-links {
     display: flex;
-    gap: 32px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 44px;
+    gap: 1.5rem;
+    background-color: #3c3a39;
+  }
+
+  .menu {
+    position: static;
+    transform: none;
+    transition: none;
+    font-size: inherit;
+    font-weight: normal;
+  }
+
+  .bottom-line {
+    position: static;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .bottom-line::after {
+    content: none;
+    background-color: none;
+  }
+
+  .nav-link {
+    padding-block: 0;
+  }
+
+  .nav-link::after {
+    content: none;
   }
 
   .nav-link:hover {
     cursor: pointer;
   }
 
+  .nav-link:first-child {
+    margin-top: 0;
+  }
+
   .nav-link:last-child {
     margin-left: 2.0625rem;
+    display: inline;
   }
 
   .nav-link:last-child i {
@@ -668,7 +811,6 @@ form input[type="submit"] {
   .hero {
     padding: 0;
     width: 100%;
-    min-height: 47.9rem;
     margin: 0;
     position: relative;
     overflow: hidden;
@@ -719,8 +861,8 @@ form input[type="submit"] {
   .hero-title h3::after {
     content: "";
     position: absolute;
-    top: -6rem;
-    right: 8rem;
+    top: -4.5rem;
+    right: 9.2rem;
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
@@ -1106,7 +1248,7 @@ form input[type="submit"] {
 
   @keyframes collide {
     form {
-      right: 8rem;
+      right: 9.2rem;
     }
 
     20% {
@@ -1114,12 +1256,12 @@ form input[type="submit"] {
     }
 
     50% {
-      right: 12.16rem;
+      right: 12.84rem;
       opacity: 100%;
     }
 
     to {
-      right: 8rem;
+      right: 9.2rem;
     }
   }
 }
