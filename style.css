@@ -183,6 +183,42 @@ header.limit {
 }
 
 .nav-links {
+  /* display: none; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(60, 58, 57);
+  z-index: 100;
+  padding: 2rem;
+  font-size: 2rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  line-height: 44px;
+  transform: translateX(100%);
+  transition: all 500ms ease-in-out;
+}
+
+.navShow {
+  transform: translateX(0);
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #dfe1e6;
+}
+
+.nav-link:last-child {
   display: none;
 }
 
@@ -192,6 +228,7 @@ header.limit {
   padding: 0.938rem 0.75rem;
   position: relative;
   cursor: pointer;
+  z-index: 100;
 }
 
 .menu-btn {
@@ -203,7 +240,7 @@ header.limit {
   height: 0.156rem;
   background-color: #fff;
   border-radius: 1rem;
-  z-index: 99;
+  z-index: 100;
 }
 
 .menu-btn::before {
