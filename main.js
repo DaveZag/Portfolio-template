@@ -1,16 +1,31 @@
-const menuBtn = document.querySelector('.menu-btn');
-const nav = document.querySelector('.nav-links');
-let shown = false;
+// ................... Show NavBar & unable Scroll .................
 
+const menuBtn = document.querySelector('.menu-btn-container');
+let nav = document.querySelector(".menu");
+const noScroll = document.querySelector("body");
+let navShown = false;
+let navLink = document.querySelectorAll(".nav-link");
 
-menuBtn.addEventListener("click", () =>  {
-    nav.classList.add("navShow");
-    // if (shown){
-    //     nav.classList.add("navShow");
-    //     shown = true;
-    // }
-    // else {
-    //     nav.classList.remove("navShow")
-    //     shown = false
-    // }
+function closeMenu(){
+    nav.classList.remove("show-menu");
+    noScroll.classList.remove("no-scroll");
+    navShown = false;
+
+}
+
+menuBtn.addEventListener("click", () => {
+    if (!navShown) {
+        nav.classList.add("show-menu");
+        noScroll.classList.add("no-scroll");
+        navShown = true;
+    }
+    else {
+       closeMenu();
+    }
 })
+
+navLink.forEach(link => {
+        link.addEventListener("click", () => {
+        closeMenu();
+    })
+});
