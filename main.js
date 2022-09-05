@@ -1,6 +1,6 @@
 // ................... Show NavBar & unable Scroll .................//
 const menuBtn = document.querySelector('.menu-btn-container');
-const btn = document.querySelector('.menu-btn')
+const btn = document.querySelector('.menu-btn');
 const nav = document.querySelector('.menu');
 const noScroll = document.querySelector('body');
 const navLink = document.querySelectorAll('.nav-link');
