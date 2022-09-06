@@ -60,15 +60,15 @@ const articlesData = [
     title: 'Multi-Post Stories',
     description: 'A daily selection of privately personalized reads; no accounts orsign-ups required. has been the industry\'s standard dummy text eversince the 1500s, when an unknown printer took a standard dummy text.',
     technologies: ['css', 'html', 'bootstrap', 'Ruby'],
-    btnText: 'See Project'
+    btnText: 'See Project',
   },
 
   {
     title: 'Professional Art Printing Data',
     description: 'A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry\'s standard',
     technologies: ['html', 'bootstrap', 'Ruby'],
-    btnText: 'See Project'
-  }
+    btnText: 'See Project',
+  },
 ];
 
 const firstArticle = document.createElement('article');
