@@ -66,7 +66,8 @@ const articlesData = [
   {
     title: 'Professional Art Printing Data',
     description: 'A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry\'s standard',
-    technologies: ['html', 'bootstrap', 'Ruby']
+    technologies: ['html', 'bootstrap', 'Ruby'],
+    btnText: 'See Project'
   }
 ];
 
@@ -118,14 +119,38 @@ articleBtn.classList.add('article-btn', 'button');
 articleBlock.appendChild(articleBtn);
 
 // ...........Multiple cards...................
-function cardText(device) {
-  if (device.matches) {
-    
-  }
-  else{
-    document.body.style.background = 'none';
-  }
-}
 
-const device = window.matchMedia('(max-width: 768px)');
-device.addEventListener('change', cardText);
+for (let count = 0; count < 6; count++) {
+  const workCard = document.createElement('div'); // card container
+  workCard.classList.add('work-card', 'flex', 'flex-col', 'end-col-left');
+  workGrid.appendChild(workCard);
+  const cardArticle = document.createElement('article'); // card article
+  cardArticle.classList.add('card-article', 'flex', 'flex-col');
+  workCard.appendChild(cardArticle);
+  const cardBlock = document.createElement('div'); // card text block
+  cardBlock.classList.add('card-block');
+  cardArticle.appendChild(cardBlock);
+  const cardHeading = document.createElement('header'); // card title
+  cardHeading.classList.add('article-title');
+  cardHeading.innerHTML = `<h2>${articlesData[1].title}</h2>`;
+  cardBlock.appendChild(cardHeading);
+  const cardDesc = document.createElement('p'); // card description
+  cardDesc.classList.add('card-art-desc');
+  cardDesc.textContent = `${articlesData[1].description}`;
+  cardBlock.appendChild(cardDesc);
+  const cardTags = document.createElement('ul'); // card tags
+  cardTags.classList.add('card-links', 'tags', 'flex');
+  cardBlock.appendChild(cardTags);
+  articlesData[1].technologies.forEach((item) => { // loop to display each tag
+    const tag = document.createElement('li');
+    const cardLink = document.createElement('a');
+    cardLink.href = '#';
+    cardLink.innerText = item;
+    tag.appendChild(cardLink);
+    cardTags.append(tag);
+  });
+  const cardBtn = document.createElement('button');// card button
+  cardBtn.classList.add('card-btn', 'button');
+  cardBtn.textContent = `${articlesData[1].btnText}`;
+  workCard.appendChild(cardBtn);
+}
