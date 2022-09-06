@@ -120,6 +120,7 @@ articleBlock.appendChild(articleBtn);
 
 // ...........Multiple cards...................
 
+// eslint-disable-next-line no-plusplus
 for (let count = 0; count < 6; count++) {
   const workCard = document.createElement('div'); // card container
   workCard.classList.add('work-card', 'flex', 'flex-col', 'end-col-left');
