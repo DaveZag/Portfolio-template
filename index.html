@@ -177,7 +177,7 @@
               <form
                 action="https://formspree.io/f/xoqbvjnd"
                 method="POST"
-                class="flex flex-col">
+                class="flex flex-col form">
                 <input
                   type="text"
                   name="fullname"
@@ -186,7 +186,8 @@
                   maxlength="30"
                   required />
 
-                <input type="email" name="email" placeholder="Email address" required />
+                <input type="email" name="email" placeholder="Email address" id="email" required />
+                <span class="error" aria-live="polite"></span>
                 <textarea
                   name="message"
                   placeholder="Enter text here"
@@ -194,7 +195,7 @@
                   required></textarea>
 
                 <div class="contact-btn flex flex-center">
-                  <button type="submit" class="button">Get in touch</button>
+                  <button type="submit" id="formBtn" class="button">Get in touch</button>
                 </div>
               </form>
             </div>
@@ -226,5 +227,6 @@
     </main>
 
     <script src="main.js"></script>
+    <script src="validation.js"></script>
   </body>
 </html>
