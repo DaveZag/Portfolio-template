@@ -5,3 +5,5 @@ node_modules/
 #...... vscode configurations ............
 
 .vscode
+
+test.html

@@ -13,7 +13,9 @@ Follow this link to visit my [Portfolio](https://davezag.github.io/Portfolio-set
 ## Built With
 
 - HTML and CSS
+- Javascript
 - npm(Node.js)
+- Font-awesome
 
 ## Getting Started
 
