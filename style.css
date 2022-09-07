@@ -666,7 +666,7 @@ form .error {
   background-color: #f8d7da;
   font-size: 1rem;
   padding-inline: 1rem;
-  margin-top: -1rem;
+  margin-block: -1rem;
   grid-column: 1/span 3;
 }
 
