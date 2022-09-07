@@ -1,5 +1,3 @@
-/* eslint linebreak-style: ["error", "windows"] */
-
 // ................... Show NavBar & unable Scroll .................//
 const menuBtn = document.querySelector('.menu-btn-container');
 const btn = document.querySelector('.menu-btn');
@@ -101,9 +99,9 @@ const tagList = document.createElement('ul');
 tagList.classList.add('article-links', 'flex', 'start-row');
 listContainer.appendChild(tagList);
 
-// eslint-disable-next-line no-plusplus
+
 for (let count = 0; count <= articlesData[0].technologies.length - 1; count++) {
-// eslint-disable-next-line no-console
+
   const listItem = document.createElement('li');
   const listLink = document.createElement('a');
   listLink.textContent = articlesData[0].technologies[count];
@@ -120,7 +118,6 @@ articleBlock.appendChild(articleBtn);
 
 // ...........Multiple cards...................
 
-// eslint-disable-next-line no-plusplus
 for (let count = 0; count < 6; count++) {
   const workCard = document.createElement('div'); // card container
   workCard.classList.add('work-card', 'flex', 'flex-col', 'end-col-left');
