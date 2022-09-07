@@ -99,9 +99,7 @@ const tagList = document.createElement('ul');
 tagList.classList.add('article-links', 'flex', 'start-row');
 listContainer.appendChild(tagList);
 
-
-for (let count = 0; count <= articlesData[0].technologies.length - 1; count++) {
-
+for (let count = 0; count <= articlesData[0].technologies.length - 1; count += 1) {
   const listItem = document.createElement('li');
   const listLink = document.createElement('a');
   listLink.textContent = articlesData[0].technologies[count];
@@ -118,7 +116,7 @@ articleBlock.appendChild(articleBtn);
 
 // ...........Multiple cards...................
 
-for (let count = 0; count < 6; count++) {
+for (let count = 0; count < 6; count += 1) {
   const workCard = document.createElement('div'); // card container
   workCard.classList.add('work-card', 'flex', 'flex-col', 'end-col-left');
   workGrid.appendChild(workCard);

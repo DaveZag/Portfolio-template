@@ -10,11 +10,10 @@ function showMessage(message) {
 }
 
 form.addEventListener('submit', (event) => {
-  if(!emailRegex.test(email.value.trim())) {
+  if (!emailRegex.test(email.value.trim())) {
     event.preventDefault();
     showMessage('Please enter a lowercase valid email address');
-  }
-  else{
+  } else {
     showMessage('');
   }
 });
