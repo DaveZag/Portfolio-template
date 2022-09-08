@@ -113,7 +113,7 @@ for (let count = 0; count <= articlesData[0].technologies.length - 1; count += 1
 
 const articleBtn = document.createElement('button');
 articleBtn.textContent = `${articlesData[0].btnText}`;
-articleBtn.classList.add('article-btn', 'button');
+articleBtn.classList.add('article-btn', 'button', 'show-modal');
 articleBlock.appendChild(articleBtn);
 
 // ...........Multiple cards...................

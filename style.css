@@ -9,7 +9,7 @@
 * {
   padding: 0;
   margin: 0;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 }
 
 html,
@@ -492,7 +492,12 @@ main {
   color: #fff;
   width: 100%;
   height: 24.125rem;
-  background: linear-gradient(180.45deg, rgba(38, 38, 38, 0) 0.75%, rgba(38, 38, 38, 0.9) 61.94%), url("./assets/images/img2.png");
+  background: linear-gradient(
+      180.45deg,
+      rgba(38, 38, 38, 0) 0.75%,
+      rgba(38, 38, 38, 0.9) 61.94%
+    ),
+    url("./assets/images/img2.png");
   background-size: cover;
   padding-top: 5.25rem;
   margin-bottom: 1.5rem;
@@ -513,6 +518,99 @@ main {
 
 .card-btn {
   width: 100%;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.477);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  padding: 1rem 1rem 0;
+  transform: scale(0);
+}
+
+.modal-container {
+  background-color: #fff;
+  width: 100%;
+  height: 90vh;
+  gap: 1.5rem;
+  padding: 1rem;
+  position: relative;
+  top: -100%;
+  overflow: scroll;
+  /* animation: popup 1.2s ease-in-out forwards;
+  animation-delay: 1.5s;
+  animation-play-state: initial; */
+}
+
+.modal-header {
+  gap: 1rem;
+}
+
+.modal-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  line-height: 2.75rem;
+  font-weight: 700;
+  color: #172b4d;
+}
+
+.modal-tags {
+  gap: 0.5rem;
+}
+
+.modal-tag {
+  font-size: 0.8125rem;
+  padding: 0.625rem 0.75rem;
+  border: 0.0625rem solid #979493;
+}
+
+.modal-content {
+  gap: inherit;
+}
+
+.modal-img {
+  width: 100%;
+}
+
+.modal-desc {
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  color: #344563;
+}
+
+.modal-btns {
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.modal-btn1,
+.modal-btn2 {
+  width: fit-content;
+  gap: 1rem;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  height: auto;
+}
+
+.close-btn-container {
+  width: fit-content;
+  position: absolute;
+  top: 2.2%;
+  right: 4.3%;
+}
+
+.close-btn-container:hover {
+  cursor: pointer;
+}
+
+.modal-close-btn {
+  width: ;
 }
 
 /* ............. About Me Section............... */
@@ -714,6 +812,18 @@ form input[type="submit"] {
 
 .contact-socials {
   height: 2.5rem;
+}
+
+/* ....................... Global keyframes ......................... */
+
+@keyframes popup {
+  0% {
+    top: -100%;
+  }
+
+  100% {
+    top: 0%;
+  }
 }
 
 /* ............................... Media queries ................................ */
@@ -1027,7 +1137,12 @@ form input[type="submit"] {
 
   .work .work-card:nth-child(5),
   .work .work-card:nth-child(2) {
-    background: linear-gradient(179.4deg, rgba(38, 38, 38, 0) 0.81%, rgba(38, 38, 38, 0.9) 84.03%), url("./assets/images/card-desktop1.svg");
+    background: linear-gradient(
+        179.4deg,
+        rgba(38, 38, 38, 0) 0.81%,
+        rgba(38, 38, 38, 0.9) 84.03%
+      ),
+      url("./assets/images/card-desktop1.svg");
     background-size: cover;
   }
 
@@ -1039,7 +1154,12 @@ form input[type="submit"] {
 
   .work .work-card:nth-child(3),
   .work .work-card:nth-child(6) {
-    background: linear-gradient(179.35deg, rgba(38, 38, 38, 0) 0.85%, rgba(38, 38, 38, 0.9) 84%), url("./assets/images/card-desktop2.svg");
+    background: linear-gradient(
+        179.35deg,
+        rgba(38, 38, 38, 0) 0.85%,
+        rgba(38, 38, 38, 0.9) 84%
+      ),
+      url("./assets/images/card-desktop2.svg");
     background-size: cover;
   }
 
@@ -1051,7 +1171,12 @@ form input[type="submit"] {
 
   .work .work-card:nth-child(4),
   .work .work-card:nth-child(7) {
-    background: linear-gradient(179.4deg, rgba(38, 38, 38, 0) 0.81%, rgba(38, 38, 38, 0.9) 84.03%), url("./assets/images/card-desktop3.svg");
+    background: linear-gradient(
+        179.4deg,
+        rgba(38, 38, 38, 0) 0.81%,
+        rgba(38, 38, 38, 0.9) 84.03%
+      ),
+      url("./assets/images/card-desktop3.svg");
     background-size: cover;
   }
 
