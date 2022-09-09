@@ -1,27 +1,36 @@
-const name = document.querySelector('#name');
-const email = document.querySelector('#email');
-const msg = document.querySelector('#message');
-const form = document.querySelector('#form');
+const nameInput = document.querySelector('#name');
+const emailInput = document.querySelector('#email');
+const messageInput = document.querySelector('#message');
+const body = document.querySelector('body');
 
-document.querySelectorAll('.input').foreach((input) => {
-    input.addEventListener('input', (event) => { 
-        event.preventDefault();
+const dataSaved = localStorage.getItem('user');
 
-    const nameData = document.querySelector('#name').value;      
-    const emailData = document.querySelector('#email').value;
-    const messageData = document.querySelector('#message').value;
+body.onload = () => {
+  if (dataSaved) {
+    // Revonvert stored data to initial form and display it
+    const parsedData = JSON.parse(dataSaved);
+    nameInput.value = parsedData.name;
+    emailInput.value = parsedData.email;
+    messageInput.value = parsedData.message;
+  }
+};
 
+// Add event to track all inputs fields and their changes
+document.querySelectorAll('.input').forEach((element) => {
+  element.addEventListener('input', () => {
+    // Select input fields values
+    const nameData = document.querySelector('#name').value.trim();
+    const emailData = document.querySelector('#email').value.trim();
+    const messageData = document.querySelector('#message').value.trim();
 
+    // store user inputs in object
     const userInput = {
-        Name: nameData,
-        email: emailData,
-        message: messageData,
+      name: nameData,
+      email: emailData,
+      message: messageData,
     };
 
+    // Store the object in local storage after converting to string
     localStorage.setItem('user', JSON.stringify(userInput));
-  });    
-});
-
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
+  });
 });
