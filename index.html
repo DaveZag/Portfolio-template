@@ -177,11 +177,14 @@
               <form
                 action="https://formspree.io/f/xoqbvjnd"
                 method="POST"
+                id="form"
                 class="flex flex-col form">
+               
                 <input
                   type="text"
                   name="fullname"
                   class="input-name"
+                  id="name"
                   placeholder="Full name"
                   maxlength="30"
                   required />
@@ -191,6 +194,7 @@
                   name="message"
                   placeholder="Enter text here"
                   maxlength="500"
+                  id="message"
                   required></textarea>
                   <span class="error" aria-live="polite"></span>
                 <div class="contact-btn flex flex-center">
@@ -227,5 +231,6 @@
 
     <script src="main.js"></script>
     <script src="validation.js"></script>
+    <script src="data-storage.js"></script>
   </body>
 </html>
