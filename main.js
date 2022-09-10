@@ -219,6 +219,38 @@ const modalBlock = document.createElement('div'); // Modal first block
 modalBlock.classList.add('modal-block');
 modalArticle.appendChild(modalBlock);
 
-forEach(element in modalData){
+forEach(element in modalData); {
   console.log(element)
 }
+
+// display different title and image depending on the device width
+function mediaMatches(media) {
+  if (media.matches) {
+    modalHeading.innerHTML = `${modalData.title[1]}`;
+    modalBlock.innerHTML = ` <img class="modal-img" src="${modalData.images[1]}" alt="Illustration of number ten" />`;
+  } else {
+    modalHeading.innerHTML = `${modalData.title[0]}`;
+    modalBlock.innerHTML = ` <img class="modal-img" src="${modalData.images[0]}" alt="Illustration of number ten" />`;
+  }
+}
+mediaQuery.addEventListener('change', mediaMatches);
+mediaMatches(mediaQuery);
+
+const modalContent = document.createElement('div'); // modal description container
+modalContent.classList.add('modal-content', 'flex', 'flex-col');
+modalContent.innerHTML = `<p class="modal-desc">${modalData.desc}</p>`; // modal description
+modalArticle.appendChild(modalContent);
+
+const btnContainer = document.createElement('div'); // modal buttons container
+btnContainer.classList.add('modal-btns', 'flex');
+
+// Add Links called buttons since they're styled like so
+for (let count = 0; count <= modalData.btnClass.length - 1; count += 1) {
+  btnContainer.innerHTML += `<a href="${modalData.btnLink[count]}" class="${modalData.btnClass[count]}">${modalData.btnText[count]}<img src="${modalData.btnImg[count]}" alt="${modalData.btnAlt[count]}" /></a>`;
+}
+modalContent.appendChild(btnContainer);
+
+const modalCloseBtn = document.createElement('div');
+modalCloseBtn.classList.add('close-btn-container');
+modalCloseBtn.innerHTML = `<span class="${modalData.closeBtnData.class[0]}" role="${modalData.closeBtnData.role}"><img class="${modalData.closeBtnData.class[1]}" src="${modalData.closeBtnData.imgSrc}" alt="${modalData.closeBtnData.imgAlt}"/></span>`;
+modalContainer.appendChild(modalCloseBtn);
