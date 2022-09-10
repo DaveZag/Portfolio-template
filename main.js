@@ -219,10 +219,6 @@ const modalBlock = document.createElement('div'); // Modal first block
 modalBlock.classList.add('modal-block');
 modalArticle.appendChild(modalBlock);
 
-forEach(element in modalData); {
-  console.log(element)
-}
-
 // display different title and image depending on the device width
 function mediaMatches(media) {
   if (media.matches) {
