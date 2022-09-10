@@ -497,21 +497,122 @@ main {
   margin-bottom: 1.5rem;
 }
 
+.card-article {
+  gap: 2rem;
+  height: 100%;
+}
+
 .card-block {
   padding: 8px 16px;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  height: 100%;
 }
 
 .card-links li {
   margin: 0.75rem 0.75rem 0.75rem 0;
 }
 
-.card-link {
+.card-tag {
   background-color: rgba(255, 255, 255, 0.24);
   padding: 0.625rem 0.75rem;
 }
 
 .card-btn {
   width: 100%;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.477);
+  backdrop-filter: blur(5px);
+  z-index: 999;
+  padding: 1rem 1rem 0;
+  transform: scale(0);
+}
+
+.modal-container {
+  background-color: #fff;
+  width: 100%;
+  height: 90vh;
+  gap: 1.5rem;
+  padding: 1rem;
+  position: relative;
+  top: -100%;
+  overflow: scroll;
+}
+
+.modal-header {
+  gap: 1rem;
+}
+
+.modal-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  line-height: 2.75rem;
+  font-weight: 700;
+  color: #172b4d;
+  margin-bottom: 1.75rem;
+  position: relative;
+}
+
+.modal-tags {
+  gap: 0.5rem;
+}
+
+.modal-tag {
+  font-size: 0.8125rem;
+  padding: 0.625rem 0.75rem;
+  border: 0.0625rem solid #979493;
+}
+
+.modal-article {
+  gap: 1.5rem;
+  height: 100vh;
+}
+
+.modal-content {
+  gap: inherit;
+}
+
+.modal-img {
+  width: 100%;
+}
+
+.modal-desc {
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  color: #344563;
+}
+
+.modal-btns {
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.modal-btn1,
+.modal-btn2 {
+  width: fit-content;
+  gap: 1rem;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  height: auto;
+}
+
+.close-btn-container {
+  width: fit-content;
+  position: absolute;
+  top: 4.5%;
+  right: 5%;
+}
+
+.close-btn-container:hover {
+  cursor: pointer;
 }
 
 /* ............. About Me Section............... */
@@ -722,6 +823,18 @@ form input[type="submit"] {
 
 .contact-socials {
   height: 2.5rem;
+}
+
+/* ....................... Global keyframes ......................... */
+
+@keyframes popup {
+  0% {
+    top: -100%;
+  }
+
+  100% {
+    top: 0%;
+  }
 }
 
 /* ............................... Media queries ................................ */
@@ -1003,36 +1116,6 @@ form input[type="submit"] {
     animation: ShowBtn 350ms ease-in-out forwards;
   }
 
-  .work-card:nth-child(3) h2,
-  .work-card:nth-child(6) h2 {
-    visibility: hidden;
-    position: relative;
-  }
-
-  .work-card:nth-child(3) h2::after,
-  .work-card:nth-child(6) h2::after {
-    content: "Data Dashboard Healthcare";
-    position: absolute;
-    top: 0;
-    left: 0;
-    visibility: visible;
-  }
-
-  .work-card:nth-child(4) h2,
-  .work-card:nth-child(7) h2 {
-    visibility: hidden;
-    position: relative;
-  }
-
-  .work-card:nth-child(4) h2::after,
-  .work-card:nth-child(7) h2::after {
-    content: "Website Protfolio";
-    position: absolute;
-    top: 0;
-    left: 0;
-    visibility: visible;
-  }
-
   .work .work-card:nth-child(5),
   .work .work-card:nth-child(2) {
     background: linear-gradient(179.4deg, rgba(38, 38, 38, 0) 0.81%, rgba(38, 38, 38, 0.9) 84.03%), url("./assets/images/card-desktop1.svg");
@@ -1067,6 +1150,61 @@ form input[type="submit"] {
   .work-card:nth-child(7):hover {
     background: url("./assets/images/card-desktop3.svg");
     background-size: cover;
+  }
+
+  .modal-container {
+    width: 1156px /*72.25rem*/;
+    height: 39.4375rem;
+    overflow: hidden;
+    gap: 2.5rem;
+  }
+
+  .modal-header {
+    gap: 0.75rem;
+  }
+
+  .modal-title {
+    margin-bottom: 0;
+    font-family: "Crete Round", serif;
+    font-weight: normal;
+  }
+
+  .modal-article {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5rem;
+    height: 28rem;
+    padding-bottom: 0.6875rem;
+  }
+
+  .modal-block {
+    width: fit-content;
+  }
+
+  .modal-img {
+    width: 41.1875rem;
+    height: 28rem;
+  }
+
+  .modal-content {
+    width: 43%;
+    height: 100%;
+    justify-content: space-between;
+  }
+
+  .close-btn-container {
+    top: 4.27%;
+  }
+
+  .modal-desc {
+    line-height: 1.875rem;
+  }
+
+  .modal-btns {
+    justify-content: flex-start;
+    gap: 0.4375rem;
   }
 
   /* About section */
