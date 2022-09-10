@@ -9,7 +9,7 @@
 * {
   padding: 0;
   margin: 0;
-  /* outline: 1px solid red; */
+  outline: 1px solid red;
 }
 
 html,
@@ -492,26 +492,29 @@ main {
   color: #fff;
   width: 100%;
   height: 24.125rem;
-  background: linear-gradient(
-      180.45deg,
-      rgba(38, 38, 38, 0) 0.75%,
-      rgba(38, 38, 38, 0.9) 61.94%
-    ),
-    url("./assets/images/img2.png");
+  background: linear-gradient(180.45deg, rgba(38, 38, 38, 0) 0.75%, rgba(38, 38, 38, 0.9) 61.94%), url("./assets/images/img2.png");
   background-size: cover;
   padding-top: 5.25rem;
   margin-bottom: 1.5rem;
 }
 
+.card-article {
+  gap: 2rem;
+  height: 100%;
+}
+
 .card-block {
   padding: 8px 16px;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  height: 100%;
 }
 
 .card-links li {
   margin: 0.75rem 0.75rem 0.75rem 0;
 }
 
-.card-link {
+.card-tag {
   background-color: rgba(255, 255, 255, 0.24);
   padding: 0.625rem 0.75rem;
 }
@@ -542,9 +545,6 @@ main {
   position: relative;
   top: -100%;
   overflow: scroll;
-  /* animation: popup 1.2s ease-in-out forwards;
-  animation-delay: 1.5s;
-  animation-play-state: initial; */
 }
 
 .modal-header {
@@ -557,6 +557,8 @@ main {
   line-height: 2.75rem;
   font-weight: 700;
   color: #172b4d;
+  margin-bottom: 1.75rem;
+  position: relative;
 }
 
 .modal-tags {
@@ -567,6 +569,11 @@ main {
   font-size: 0.8125rem;
   padding: 0.625rem 0.75rem;
   border: 0.0625rem solid #979493;
+}
+
+.modal-article {
+  gap: 1.5rem;
+  height: 100vh;
 }
 
 .modal-content {
@@ -601,16 +608,12 @@ main {
 .close-btn-container {
   width: fit-content;
   position: absolute;
-  top: 2.2%;
-  right: 4.3%;
+  top: 4.5%;
+  right: 5%;
 }
 
 .close-btn-container:hover {
   cursor: pointer;
-}
-
-.modal-close-btn {
-  width: ;
 }
 
 /* ............. About Me Section............... */
@@ -1105,44 +1108,9 @@ form input[type="submit"] {
     animation: ShowBtn 350ms ease-in-out forwards;
   }
 
-  .work-card:nth-child(3) h2,
-  .work-card:nth-child(6) h2 {
-    visibility: hidden;
-    position: relative;
-  }
-
-  .work-card:nth-child(3) h2::after,
-  .work-card:nth-child(6) h2::after {
-    content: "Data Dashboard Healthcare";
-    position: absolute;
-    top: 0;
-    left: 0;
-    visibility: visible;
-  }
-
-  .work-card:nth-child(4) h2,
-  .work-card:nth-child(7) h2 {
-    visibility: hidden;
-    position: relative;
-  }
-
-  .work-card:nth-child(4) h2::after,
-  .work-card:nth-child(7) h2::after {
-    content: "Website Protfolio";
-    position: absolute;
-    top: 0;
-    left: 0;
-    visibility: visible;
-  }
-
   .work .work-card:nth-child(5),
   .work .work-card:nth-child(2) {
-    background: linear-gradient(
-        179.4deg,
-        rgba(38, 38, 38, 0) 0.81%,
-        rgba(38, 38, 38, 0.9) 84.03%
-      ),
-      url("./assets/images/card-desktop1.svg");
+    background: linear-gradient(179.4deg, rgba(38, 38, 38, 0) 0.81%, rgba(38, 38, 38, 0.9) 84.03%), url("./assets/images/card-desktop1.svg");
     background-size: cover;
   }
 
@@ -1154,12 +1122,7 @@ form input[type="submit"] {
 
   .work .work-card:nth-child(3),
   .work .work-card:nth-child(6) {
-    background: linear-gradient(
-        179.35deg,
-        rgba(38, 38, 38, 0) 0.85%,
-        rgba(38, 38, 38, 0.9) 84%
-      ),
-      url("./assets/images/card-desktop2.svg");
+    background: linear-gradient(179.35deg, rgba(38, 38, 38, 0) 0.85%, rgba(38, 38, 38, 0.9) 84%), url("./assets/images/card-desktop2.svg");
     background-size: cover;
   }
 
@@ -1171,12 +1134,7 @@ form input[type="submit"] {
 
   .work .work-card:nth-child(4),
   .work .work-card:nth-child(7) {
-    background: linear-gradient(
-        179.4deg,
-        rgba(38, 38, 38, 0) 0.81%,
-        rgba(38, 38, 38, 0.9) 84.03%
-      ),
-      url("./assets/images/card-desktop3.svg");
+    background: linear-gradient(179.4deg, rgba(38, 38, 38, 0) 0.81%, rgba(38, 38, 38, 0.9) 84.03%), url("./assets/images/card-desktop3.svg");
     background-size: cover;
   }
 
@@ -1184,6 +1142,61 @@ form input[type="submit"] {
   .work-card:nth-child(7):hover {
     background: url("./assets/images/card-desktop3.svg");
     background-size: cover;
+  }
+
+  .modal-container {
+    width: 1156px /*72.25rem*/;
+    height: 39.4375rem;
+    overflow: hidden;
+    gap: 2.5rem;
+  }
+
+  .modal-header {
+    gap: 0.75rem;
+  }
+
+  .modal-title {
+    margin-bottom: 0;
+    font-family: "Crete Round", serif;
+    font-weight: normal;
+  }
+
+  .modal-article {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5rem;
+    height: 28rem;
+    padding-bottom: 0.6875rem;
+  }
+
+  .modal-block {
+    width: fit-content;
+  }
+
+  .modal-img {
+    width: 41.1875rem;
+    height: 28rem;
+  }
+
+  .modal-content {
+    width: 43%;
+    height: 100%;
+    justify-content: space-between;
+  }
+
+  .close-btn-container {
+    top: 4.27%;
+  }
+
+  .modal-desc {
+    line-height: 1.875rem;
+  }
+
+  .modal-btns {
+    justify-content: flex-start;
+    gap: 0.4375rem;
   }
 
   /* About section */
