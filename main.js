@@ -1,4 +1,5 @@
-// ................... Show NavBar & unable Scroll ................. //
+// ................... Show NavBar & unable Scroll .................//
+
 const menuBtn = document.querySelector('.menu-btn-container');
 const btn = document.querySelector('.menu-btn');
 const nav = document.querySelector('.menu');
