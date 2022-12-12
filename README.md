@@ -14,7 +14,7 @@ Follow this link to visit my [Portfolio](https://davezag.github.io/Portfolio-set
 
 - HTML and CSS
 - Javascript
-- npm(Node.js)
+- Node.js(npm)
 - Font-awesome
 
 ## Getting Started
