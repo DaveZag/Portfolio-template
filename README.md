@@ -5,7 +5,7 @@
 
 ## Live link
 
-Follow this link to visit my [Portfolio](https://davezag.github.io/Portfolio-setup-and-mobile-first/).
+Follow this link to visit my [Portfolio](https://davezag.github.io/Portfolio-template).
 
 ## Built With
 
@@ -35,7 +35,7 @@ To get a local copy up and running follow these simple example steps.
 
 ## Repo Links
 
-- Repository: [Portfolio](https://github.com/DaveZag/Portfolio-setup-and-mobile-first)
+- Repository: [Portfolio](https://github.com/DaveZag/Portfolio-template)
 
 ## Socials
 
