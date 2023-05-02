@@ -95,28 +95,27 @@ const projects = [
     ],
   },
   {
-    title: ["TopShow"],
-    shortDesc: "A Show rating website built around an api.",
+    title: ["Math Magicians"],
+    shortDesc:
+      "A website for all fans of mathematics. It is a Single Page App that allows users to make simple calculations.",
     description:
-      "TopShow is a SPA that gets shows from an API and displays them dynamically. The app allows you to comment and like a show. It records the total number of likes in another API and comments per show and it shows comments and a brief description of the show when you click on the comment button.",
-    image: "./assets/images/topshow.webp",
-    technologies: ["HTML", "CSS3", "JavaScript", "Webpack"],
+      "Math Magicians is a website for all fans of mathematics. It is a Single Page App (SPA) that allows users to Make simple calculations using the integrated calculator and Read random math-related quotes.",
+    image: "./assets/images/magicians.png",
+    technologies: ["React", "CSS3", "Jest"],
     btnLink: [
-      "https://johnkioko.github.io/Api-Capstone-Project",
-      "https://github.com/DaveZag/TopShow",
+      "https://math-magician2.netlify.app",
+      "https://github.com/DaveZag/math-magician",
     ],
   },
   {
-    title: ["TopShow"],
-    shortDesc: "A Show rating website built around an api.",
+    title: ["Smart"],
+    shortDesc:
+      "A platform that provides students from all around the world an opportunity to learn coding.",
     description:
-      "TopShow is a SPA that gets shows from an API and displays them dynamically. The app allows you to comment and like a show. It records the total number of likes in another API and comments per show and it shows comments and a brief description of the show when you click on the comment button.",
-    image: "./assets/images/topshow.webp",
-    technologies: ["HTML", "CSS3", "JavaScript", "Webpack"],
-    btnLink: [
-      "https://johnkioko.github.io/Api-Capstone-Project",
-      "https://github.com/DaveZag/TopShow",
-    ],
+      "Smart is a platform that provides students from all around the world an opportunity to learn coding without having to worry about distance, Fees, and other hindrances that can easily be found in traditional school systems.",
+    image: "./assets/images/smart.png",
+    technologies: ["HTML", "CSS3", "JavaScript", "SASS"],
+    btnLink: ["https://davezag.github.io/Smart", "https://github.com/DaveZag/Smart"],
   },
 ];
 

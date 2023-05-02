@@ -1177,10 +1177,11 @@ form input[type="submit"] {
   .modal-img {
     width: 41.1875rem;
     height: 28rem;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   .modal-content {
+    padding-block: 3rem;
     width: 43%;
     height: 100%;
     justify-content: space-between;
