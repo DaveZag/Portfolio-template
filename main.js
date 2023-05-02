@@ -74,13 +74,49 @@ const firstProject = {
 
 const projects = [
   {
-    title: ["Professional Art Printing Data"],
-    shortDesc: "Hello there",
+    title: "Cryptoist",
+    shortDesc: "SPA app built around coinGeko api.",
     description:
-      "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard",
-    image: "./assets/images/meal_master.jpg",
-    technologies: ["Ruby", "Ruby on Rails", "React"],
-    btnLink: ["#", "#"],
+      "Cryptoist is a SPA that consists of a home page that fetches and displays data about cryptocurrencies, and a details page where the user can interact with a specific currency's information in a well-structured and interactive UI.",
+    image: "./assets/images/crypto.png",
+    technologies: ["React", "CSS", "Jest"],
+    btnLink: ["https://cryptoist.netlify.app", "https://github.com/DaveZag/cryptoist"],
+  },
+  {
+    title: ["TopShow"],
+    shortDesc: "A Show rating website built around an api.",
+    description:
+      "TopShow is a SPA that gets shows from an API and displays them dynamically. The app allows you to comment and like a show. It records the total number of likes in another API and comments per show and it shows comments and a brief description of the show when you click on the comment button.",
+    image: "./assets/images/topshow.webp",
+    technologies: ["HTML", "CSS3", "JavaScript", "Webpack"],
+    btnLink: [
+      "https://johnkioko.github.io/Api-Capstone-Project",
+      "https://github.com/DaveZag/TopShow",
+    ],
+  },
+  {
+    title: ["TopShow"],
+    shortDesc: "A Show rating website built around an api.",
+    description:
+      "TopShow is a SPA that gets shows from an API and displays them dynamically. The app allows you to comment and like a show. It records the total number of likes in another API and comments per show and it shows comments and a brief description of the show when you click on the comment button.",
+    image: "./assets/images/topshow.webp",
+    technologies: ["HTML", "CSS3", "JavaScript", "Webpack"],
+    btnLink: [
+      "https://johnkioko.github.io/Api-Capstone-Project",
+      "https://github.com/DaveZag/TopShow",
+    ],
+  },
+  {
+    title: ["TopShow"],
+    shortDesc: "A Show rating website built around an api.",
+    description:
+      "TopShow is a SPA that gets shows from an API and displays them dynamically. The app allows you to comment and like a show. It records the total number of likes in another API and comments per show and it shows comments and a brief description of the show when you click on the comment button.",
+    image: "./assets/images/topshow.webp",
+    technologies: ["HTML", "CSS3", "JavaScript", "Webpack"],
+    btnLink: [
+      "https://johnkioko.github.io/Api-Capstone-Project",
+      "https://github.com/DaveZag/TopShow",
+    ],
   },
 ];
 
@@ -138,6 +174,7 @@ articleBlock.appendChild(articleBtn);
 const createCard = (project) => {
   const workCard = document.createElement("div"); // card container
   workCard.classList.add("work-card", "flex", "flex-col", "end-col-left");
+  workCard.style.backgroundImage = `url(${project.image})`;
   workGrid.appendChild(workCard);
   const cardArticle = document.createElement("article"); // card article
   cardArticle.classList.add("card-article", "flex", "flex-col");
@@ -152,12 +189,15 @@ const createCard = (project) => {
 
   const cardDesc = document.createElement("p"); // card description
   cardDesc.classList.add("card-art-desc");
-  cardDesc.textContent = `${project.description}`;
+  cardDesc.textContent = `${project.shortDesc}`;
   cardBlock.appendChild(cardDesc);
   const cardTags = document.createElement("ul"); // card tags
   cardTags.classList.add("card-links", "tags", "flex");
   cardBlock.appendChild(cardTags);
-  project.technologies.forEach((item) => {
+  project.technologies.forEach((item, index) => {
+    if (index > 2) {
+      return false;
+    }
     // loop to display each tag
     const tag = document.createElement("li");
     tag.className = "card-tag";

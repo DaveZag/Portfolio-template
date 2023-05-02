@@ -1107,6 +1107,9 @@ form input[type="submit"] {
     position: relative;
     overflow: hidden;
     height: 27.1875rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   .work-card:hover {
@@ -1128,55 +1131,16 @@ form input[type="submit"] {
     animation: ShowBtn 350ms ease-in-out forwards;
   }
 
-  .work .work-card:nth-child(5),
-  .work .work-card:nth-child(2) {
+  .work-card > article {
     background: linear-gradient(
-        179.4deg,
-        rgba(38, 38, 38, 0) 0.81%,
-        rgba(38, 38, 38, 0.9) 84.03%
-      ),
-      url("./assets/images/card-desktop1.svg");
+      179.4deg,
+      rgba(38, 38, 38, 0) 0.81%,
+      rgba(38, 38, 38, 0.9) 84.03%
+    );
     background-size: cover;
   }
-
-  .work-card:nth-child(5):hover,
-  .work-card:nth-child(2):hover {
-    background: url("./assets/images/card-desktop1.svg");
-    background-size: cover;
-  }
-
-  .work .work-card:nth-child(3),
-  .work .work-card:nth-child(6) {
-    background: linear-gradient(
-        179.35deg,
-        rgba(38, 38, 38, 0) 0.85%,
-        rgba(38, 38, 38, 0.9) 84%
-      ),
-      url("./assets/images/card-desktop2.svg");
-    background-size: cover;
-  }
-
-  .work-card:nth-child(3):hover,
-  .work-card:nth-child(6):hover {
-    background: url("./assets/images/card-desktop2.svg");
-    background-size: cover;
-  }
-
-  .work .work-card:nth-child(4),
-  .work .work-card:nth-child(7) {
-    background: linear-gradient(
-        179.4deg,
-        rgba(38, 38, 38, 0) 0.81%,
-        rgba(38, 38, 38, 0.9) 84.03%
-      ),
-      url("./assets/images/card-desktop3.svg");
-    background-size: cover;
-  }
-
-  .work-card:nth-child(4):hover,
-  .work-card:nth-child(7):hover {
-    background: url("./assets/images/card-desktop3.svg");
-    background-size: cover;
+  .work-card:hover > article {
+    background: none;
   }
 
   .modal-container {
