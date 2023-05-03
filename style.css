@@ -487,7 +487,8 @@ main {
   color: #fff;
   width: 100%;
   height: 24.125rem;
-  background: linear-gradient(
+  background:
+    linear-gradient(
       180.45deg,
       rgba(38, 38, 38, 0) 0.75%,
       rgba(38, 38, 38, 0.9) 61.94%
@@ -1001,9 +1002,10 @@ form input[type="submit"] {
     height: 2rem;
     border-radius: 50%;
     background: linear-gradient(to right, var(--hColor) 50%, rgb(255, 255, 255) 9%);
-    /* animation: rotate 1s linear infinite, collide 4s linear 4; */
     animation-delay: 6.5s;
     opacity: 0;
+
+    /* animation: rotate 1s linear infinite, collide 4s linear 4; */
   }
 
   .hero-headline p {
@@ -1135,11 +1137,12 @@ form input[type="submit"] {
   }
 
   .work-card > article {
-    background: linear-gradient(
-      179.4deg,
-      rgba(38, 38, 38, 0) 0.81%,
-      rgba(38, 38, 38, 0.9) 84.03%
-    );
+    background:
+      linear-gradient(
+        179.4deg,
+        rgba(38, 38, 38, 0) 0.81%,
+        rgba(38, 38, 38, 0.9) 84.03%
+      );
     background-size: cover;
   }
 
