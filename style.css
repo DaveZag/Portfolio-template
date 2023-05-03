@@ -72,12 +72,14 @@ a:hover {
   color: var(--hColor);
 }
 
-h1 {
+h1,
+.h1 {
   font-family: "Crete Round", serif;
   font-style: normal;
   color: var(--hColor);
   font-weight: 400;
   letter-spacing: 0.02375rem;
+  font-size: 2rem;
 }
 
 h2 {
@@ -823,6 +825,7 @@ form input[type="submit"] {
 .contact-socials .socials-link:hover i {
   color: var(--hColor);
 }
+
 .contact-socials {
   height: 2.5rem;
 }
@@ -849,7 +852,7 @@ form input[type="submit"] {
 
 @media screen and (min-width: 768px) and (max-width: 1000px) {
   .card-links {
-    margin: 0rem;
+    margin: 0;
     gap: 0.5rem;
   }
 }
@@ -998,7 +1001,7 @@ form input[type="submit"] {
     height: 2rem;
     border-radius: 50%;
     background: linear-gradient(to right, var(--hColor) 50%, rgb(255, 255, 255) 9%);
-    animation: rotate 1s linear infinite, collide 4s linear 4;
+    /* animation: rotate 1s linear infinite, collide 4s linear 4; */
     animation-delay: 6.5s;
     opacity: 0;
   }
@@ -1139,6 +1142,7 @@ form input[type="submit"] {
     );
     background-size: cover;
   }
+
   .work-card:hover > article {
     background: none;
   }
