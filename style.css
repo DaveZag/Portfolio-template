@@ -1150,6 +1150,10 @@ form input[type="submit"] {
     background: none;
   }
 
+  .card-links li {
+    margin: 0;
+  }
+
   .modal-container {
     width: 1156px /*72.25rem*/;
     height: 39.4375rem;
@@ -1414,5 +1418,11 @@ form input[type="submit"] {
   .about-main-container {
     background-position: left 109% top 35.8%;
     background-size: 45.75% 29.5208%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .card-links li {
+    margin: 0.75rem 0.75rem 0.75rem 0;
   }
 }

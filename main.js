@@ -146,7 +146,7 @@ const firstProject = {
     'Web application for ordering food with user authentication and admin access.',
   description:
     'Meal Master is a full-stack web application for ordering food with user authentication and admin access. It is built using Rails and React enables a user to create an account, sign-in, order foods of their liking, and/or delete their orders.',
-  technologies: ['Ruby', 'Ruby on Rails', 'React'],
+  technologies: ['Ruby', 'Rails', 'React'],
   btnLink: [
     'https://mealmaster5.netlify.app/',
     'https://github.com/DaveZag/meal-master-frontend',
