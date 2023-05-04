@@ -34,6 +34,87 @@ navLink.forEach((link) => {
   });
 });
 
+// ................. The Modal ...................
+
+const modalData = {
+  btnClass: ['modal-btn1 button flex', 'modal-btn2 button flex'],
+  btnImg: [
+    './assets/images/modal-first-btn-icon.svg',
+    './assets/images/modal-second-btn-icon.svg',
+  ],
+  btnText: ['See Live', 'See Source'],
+  btnAlt: ['Live link icon', 'Github icon'],
+  closeBtnData: {
+    class: ['modal-close-btn', 'modal-btn-icon'],
+    imgSrc: './assets/images/modal-close-btn.svg',
+    imgAlt: 'Close popup icon',
+    role: 'button',
+  },
+};
+
+const createPopup = (project) => {
+  const modal = document.querySelector('.modal');
+
+  const modalContainer = document.createElement('div'); // modal container
+  modalContainer.classList.add('modal-container', 'flex', 'flex-col');
+  modal.appendChild(modalContainer);
+
+  const modalHeader = document.createElement('header'); // modal Header
+  modalHeader.classList.add('modal-header', 'flex', 'flex-col');
+  modalContainer.appendChild(modalHeader);
+
+  const modalHeading = document.createElement('h1'); // modal Main Title
+  modalHeading.classList.add('modal-title');
+  modalHeading.innerHTML = `${project.title}`;
+  modalHeader.appendChild(modalHeading);
+
+  const modalList = document.createElement('ul'); // Modal tag list
+  modalList.classList.add('modal-tags', 'flex');
+  modalHeader.appendChild(modalList);
+
+  // create list items
+  for (let count = 0; count <= project.technologies.length - 1; count += 1) {
+    modalList.innerHTML += `<li class="modal-tag">${project.technologies[count]}</li>`;
+  }
+
+  const modalArticle = document.createElement('div'); // modal artcile (Text and picture)
+  modalArticle.classList.add('modal-article', 'flex', 'flex-col');
+  modalContainer.appendChild(modalArticle);
+
+  const modalBlock = document.createElement('div'); // Modal first block
+  modalBlock.classList.add('modal-block');
+  modalBlock.innerHTML = ` <img class="modal-img" src="${project.image}" alt="Illustration of number ten" />`;
+  modalArticle.appendChild(modalBlock);
+
+  const modalContent = document.createElement('div');
+  modalContent.classList.add('modal-content', 'flex', 'flex-col');
+  modalContent.innerHTML = `<p class="modal-desc">${project.description}</p>`;
+  modalArticle.appendChild(modalContent);
+
+  modal.style.transform = 'scale(1)';
+  modalContainer.style.animation = 'popup 200ms linear forwards';
+  document.querySelector('body').classList.add('no-scroll');
+  const btnContainer = document.createElement('div');
+  btnContainer.classList.add('modal-btns', 'flex');
+
+  // Add Links called buttons since they're styled like so
+  for (let count = 0; count <= modalData.btnClass.length - 1; count += 1) {
+    btnContainer.innerHTML += `<a href="${project.btnLink[count]}" target="_blank" rel="noreferrer" class="${modalData.btnClass[count]}">${modalData.btnText[count]}<img src="${modalData.btnImg[count]}" alt="${modalData.btnAlt[count]}" /></a>`;
+  }
+  modalContent.appendChild(btnContainer);
+
+  const modalCloseBtn = document.createElement('div');
+  modalCloseBtn.addEventListener('click', () => {
+    modal.style.transform = 'scale(0)';
+    modalContainer.remove();
+    document.querySelector('body').classList.remove('no-scroll');
+  });
+
+  modalCloseBtn.classList.add('close-btn-container');
+  modalCloseBtn.innerHTML = `<span class="${modalData.closeBtnData.class[0]}" role="${modalData.closeBtnData.role}"><img class="${modalData.closeBtnData.class[1]}" src="${modalData.closeBtnData.imgSrc}" alt="${modalData.closeBtnData.imgAlt}"/></span>`;
+  modalContainer.appendChild(modalCloseBtn);
+};
+
 // .................... Dynamic Work section and Cards .......................
 
 const workSection = document.querySelector('.work');
@@ -45,33 +126,77 @@ const workHeader = document.createElement('div'); // work section header
 workHeader.classList.add('work-title', 'limit-desk');
 workCont.appendChild(workHeader);
 
-const workHeading = document.createElement('h2');// section Title
+const workHeading = document.createElement('h2'); // section Title
 workHeading.textContent = 'My Recent Works';
 const workDiviser = document.createElement('span');
 workHeader.appendChild(workHeading);
 workHeader.appendChild(workDiviser);
 
-const workGrid = document.createElement('div');// Grid container
+const workGrid = document.createElement('div'); // Grid container
 workGrid.classList.add('grid', 'limit-desk');
 workCont.appendChild(workGrid);
 
 // Use object to store Article data
-const articlesData = [
-  {
-    imgUrl: './assets/images/Img-Placeholder.png',
-    imgAlt: 'illustration of a woman practising yoga',
-    title: 'Multi-Post Stories',
-    description: 'A daily selection of privately personalized reads; no accounts orsign-ups required. has been the industry\'s standard dummy text eversince the 1500s, when an unknown printer took a standard dummy text.',
-    technologies: ['css', 'html', 'bootstrap', 'Ruby'],
-    btnText: 'See Project',
-  },
 
+const firstProject = {
+  image: './assets/images/meal_master.jpg',
+  imgAlt: 'Meal Master home page screenshot',
+  title: 'Meal Master',
+  shortDesc:
+    'Web application for ordering food with user authentication and admin access.',
+  description:
+    'Meal Master is a full-stack web application for ordering food with user authentication and admin access. It is built using Rails and React enables a user to create an account, sign-in, order foods of their liking, and/or delete their orders.',
+  technologies: ['Ruby', 'Rails', 'React'],
+  btnLink: [
+    'https://mealmaster5.netlify.app/',
+    'https://github.com/DaveZag/meal-master-frontend',
+  ],
+};
+
+const projects = [
   {
-    title: ['Professional Art Printing Data'],
-    titleDesk: ['Professional Art <br/> Printing Data', 'Data Dashboard Healthcare', 'Website Protfolio', 'Professional Art <br/> Printing Data', 'Data Dashboard Healthcare', 'Website Protfolio'],
-    description: 'A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry\'s standard',
-    technologies: ['html', 'bootstrap', 'Ruby'],
-    btnText: 'See Project',
+    title: 'Cryptoist',
+    shortDesc: 'SPA app built around coinGeko api.',
+    description:
+      "Cryptoist is a SPA that consists of a home page that fetches and displays data about cryptocurrencies, and a details page where the user can interact with a specific currency's information in a well-structured and interactive UI.",
+    image: './assets/images/crypto.png',
+    technologies: ['React', 'CSS', 'Jest'],
+    btnLink: ['https://cryptoist.netlify.app', 'https://github.com/DaveZag/cryptoist'],
+  },
+  {
+    title: ['TopShow'],
+    shortDesc: 'A Show rating website built around an api.',
+    description:
+      'TopShow is a SPA that gets shows from an API and displays them dynamically. The app allows you to comment and like a show. It records the total number of likes in another API and comments per show and it shows comments and a brief description of the show when you click on the comment button.',
+    image: './assets/images/topshow.webp',
+    technologies: ['HTML', 'CSS3', 'JavaScript', 'Webpack'],
+    btnLink: [
+      'https://johnkioko.github.io/Api-Capstone-Project',
+      'https://github.com/DaveZag/TopShow',
+    ],
+  },
+  {
+    title: ['Math Magicians'],
+    shortDesc:
+      'A website for all fans of mathematics. It is a Single Page App that allows users to make simple calculations.',
+    description:
+      'Math Magicians is a website for all fans of mathematics. It is a Single Page App (SPA) that allows users to Make simple calculations using the integrated calculator and Read random math-related quotes.',
+    image: './assets/images/magicians.png',
+    technologies: ['React', 'CSS3', 'Jest'],
+    btnLink: [
+      'https://math-magician2.netlify.app',
+      'https://github.com/DaveZag/math-magician',
+    ],
+  },
+  {
+    title: ['Smart'],
+    shortDesc:
+      'A platform that provides students from all around the world an opportunity to learn coding.',
+    description:
+      'Smart is a platform that provides students from all around the world an opportunity to learn coding without having to worry about distance, Fees, and other hindrances that can easily be found in traditional school systems.',
+    image: './assets/images/smart.png',
+    technologies: ['HTML', 'CSS3', 'JavaScript', 'SASS'],
+    btnLink: ['https://davezag.github.io/Smart', 'https://github.com/DaveZag/Smart'],
   },
 ];
 
@@ -81,7 +206,7 @@ firstArticle.classList.add('main-article', 'flex', 'flex-col', 'flex-center');
 workGrid.appendChild(firstArticle);
 
 const articleImg = document.createElement('div');
-articleImg.innerHTML = `<img src="${articlesData[0].imgUrl}" alt="${articlesData[0].imgAlt}"/>`;
+articleImg.innerHTML = `<img src="${firstProject.image}" alt="${firstProject.imgAlt}"/>`;
 articleImg.classList.add('article-img');
 firstArticle.appendChild(articleImg);
 
@@ -91,12 +216,12 @@ firstArticle.appendChild(articleBlock);
 
 const articleHead = document.createElement('header');
 articleHead.classList.add('article-title');
-articleHead.innerHTML = `<h2>${articlesData[0].title}</h2>`;
+articleHead.innerHTML = `<h2>${firstProject.title}</h2>`;
 articleBlock.appendChild(articleHead);
 
 const articleDesc = document.createElement('p');
 articleDesc.classList.add('article-desc');
-articleDesc.textContent = articlesData[0].description;
+articleDesc.textContent = firstProject.description;
 articleBlock.appendChild(articleDesc);
 
 const listContainer = document.createElement('div');
@@ -106,10 +231,10 @@ const tagList = document.createElement('ul');
 tagList.classList.add('article-links', 'flex', 'start-row');
 listContainer.appendChild(tagList);
 
-for (let count = 0; count <= articlesData[0].technologies.length - 1; count += 1) {
+for (let count = 0; count <= firstProject.technologies.length - 1; count += 1) {
   const listItem = document.createElement('li');
   const listLink = document.createElement('a');
-  listLink.textContent = articlesData[0].technologies[count];
+  listLink.textContent = firstProject.technologies[count];
   listLink.classList.add('article-link');
   listLink.setAttribute('href', '#');
   listItem.appendChild(listLink);
@@ -117,17 +242,19 @@ for (let count = 0; count <= articlesData[0].technologies.length - 1; count += 1
 }
 
 const articleBtn = document.createElement('button');
-articleBtn.textContent = `${articlesData[0].btnText}`;
+articleBtn.textContent = 'See Project';
 articleBtn.classList.add('article-btn', 'button', 'show-modal');
+articleBtn.addEventListener('click', () => {
+  createPopup(firstProject);
+});
 articleBlock.appendChild(articleBtn);
 
 // ...........Multiple cards...................
 
-const mediaQuery = matchMedia('(min-width: 768px)');
-
-for (let count = 0; count < 6; count += 1) {
+const createCard = (project) => {
   const workCard = document.createElement('div'); // card container
   workCard.classList.add('work-card', 'flex', 'flex-col', 'end-col-left');
+  workCard.style.backgroundImage = `url(${project.image})`;
   workGrid.appendChild(workCard);
   const cardArticle = document.createElement('article'); // card article
   cardArticle.classList.add('card-article', 'flex', 'flex-col');
@@ -137,23 +264,21 @@ for (let count = 0; count < 6; count += 1) {
   cardArticle.appendChild(cardBlock);
   const cardHeading = document.createElement('header'); // card title
   cardHeading.classList.add('article-title');
+  cardHeading.innerHTML = `<h2>${project.title}</h2>`;
+  cardBlock.appendChild(cardHeading);
 
-  // Use condition to display different type of titles depending on the device
-  if (mediaQuery.matches) {
-    cardHeading.innerHTML = `<h2>${articlesData[1].titleDesk[count]}</h2>`;
-    cardBlock.appendChild(cardHeading);
-  } else {
-    cardHeading.innerHTML = `<h2>${articlesData[1].title}</h2>`;
-    cardBlock.appendChild(cardHeading);
-  }
   const cardDesc = document.createElement('p'); // card description
   cardDesc.classList.add('card-art-desc');
-  cardDesc.textContent = `${articlesData[1].description}`;
+  cardDesc.textContent = `${project.shortDesc}`;
   cardBlock.appendChild(cardDesc);
   const cardTags = document.createElement('ul'); // card tags
   cardTags.classList.add('card-links', 'tags', 'flex');
   cardBlock.appendChild(cardTags);
-  articlesData[1].technologies.forEach((item) => { // loop to display each tag
+  project.technologies.forEach((item, index) => {
+    if (index > 2) {
+      return false;
+    }
+    // loop to display each tag
     const tag = document.createElement('li');
     tag.className = 'card-tag';
     const cardLink = document.createElement('a');
@@ -161,92 +286,17 @@ for (let count = 0; count < 6; count += 1) {
     cardLink.innerText = item;
     tag.appendChild(cardLink);
     cardTags.append(tag);
+    return 0;
   });
-  const cardBtn = document.createElement('button');// card button
+  const cardBtn = document.createElement('button'); // card button
   cardBtn.classList.add('card-btn', 'button', 'show-modal');
-  cardBtn.textContent = `${articlesData[1].btnText}`;
+  cardBtn.textContent = 'See Project';
+  cardBtn.addEventListener('click', () => {
+    createPopup(project);
+  });
   workCard.appendChild(cardBtn);
-}
-
-// ................. The Modal ...................
-
-const modalData = {
-  title: ['Multi Post Stories', 'Keeping track of hundreds  of components website'],
-  tags: ['html', 'bootstrap', 'Ruby on rails'],
-  images: ['./assets/images/modal-mobile.svg', './assets/images/modal-desktop.svg'],
-  desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when anunknown printer took a galley of type and scrambled it 1960s with the releaLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the releax map lapora verita.',
-  btnClass: ['modal-btn1 button flex', 'modal-btn2 button flex'],
-  btnImg: ['./assets/images/modal-first-btn-icon.svg', './assets/images/modal-second-btn-icon.svg'],
-  btnLink: ['#', '#'],
-  btnText: ['See Live', 'See Source'],
-  btnAlt: ['Live link icon', 'Github icon'],
-  closeBtnData: {
-    class: ['modal-close-btn', 'modal-btn-icon'],
-    imgSrc: './assets/images/modal-close-btn.svg',
-    imgAlt: 'Close popup icon',
-    role: 'button',
-  },
 };
 
-const modal = document.querySelector('.modal');
-
-const modalContainer = document.createElement('div'); // modal container
-modalContainer.classList.add('modal-container', 'flex', 'flex-col');
-modal.appendChild(modalContainer);
-
-const modalHeader = document.createElement('header'); // modal Header
-modalHeader.classList.add('modal-header', 'flex', 'flex-col');
-modalContainer.appendChild(modalHeader);
-
-const modalHeading = document.createElement('h1'); // modal Main Title
-modalHeading.classList.add('modal-title');
-modalHeader.appendChild(modalHeading);
-
-const modalList = document.createElement('ul'); // Modal tag list
-modalList.classList.add('modal-tags', 'flex');
-modalHeader.appendChild(modalList);
-
-// create list items
-for (let count = 0; count <= modalData.tags.length - 1; count += 1) {
-  modalList.innerHTML += `<li class="modal-tag">${modalData.tags[count]}</li>`;
-}
-
-const modalArticle = document.createElement('div'); // modal artcile (Text and picture)
-modalArticle.classList.add('modal-article', 'flex', 'flex-col');
-modalContainer.appendChild(modalArticle);
-
-const modalBlock = document.createElement('div'); // Modal first block
-modalBlock.classList.add('modal-block');
-modalArticle.appendChild(modalBlock);
-
-// display different title and image depending on the device width
-function mediaMatches(media) {
-  if (media.matches) {
-    modalHeading.innerHTML = `${modalData.title[1]}`;
-    modalBlock.innerHTML = ` <img class="modal-img" src="${modalData.images[1]}" alt="Illustration of number ten" />`;
-  } else {
-    modalHeading.innerHTML = `${modalData.title[0]}`;
-    modalBlock.innerHTML = ` <img class="modal-img" src="${modalData.images[0]}" alt="Illustration of number ten" />`;
-  }
-}
-mediaQuery.addEventListener('change', mediaMatches);
-mediaMatches(mediaQuery);
-
-const modalContent = document.createElement('div'); // modal description container
-modalContent.classList.add('modal-content', 'flex', 'flex-col');
-modalContent.innerHTML = `<p class="modal-desc">${modalData.desc}</p>`; // modal description
-modalArticle.appendChild(modalContent);
-
-const btnContainer = document.createElement('div'); // modal buttons container
-btnContainer.classList.add('modal-btns', 'flex');
-
-// Add Links called buttons since they're styled like so
-for (let count = 0; count <= modalData.btnClass.length - 1; count += 1) {
-  btnContainer.innerHTML += `<a href="${modalData.btnLink[count]}" class="${modalData.btnClass[count]}">${modalData.btnText[count]}<img src="${modalData.btnImg[count]}" alt="${modalData.btnAlt[count]}" /></a>`;
-}
-modalContent.appendChild(btnContainer);
-
-const modalCloseBtn = document.createElement('div');
-modalCloseBtn.classList.add('close-btn-container');
-modalCloseBtn.innerHTML = `<span class="${modalData.closeBtnData.class[0]}" role="${modalData.closeBtnData.role}"><img class="${modalData.closeBtnData.class[1]}" src="${modalData.closeBtnData.imgSrc}" alt="${modalData.closeBtnData.imgAlt}"/></span>`;
-modalContainer.appendChild(modalCloseBtn);
+projects.forEach((project) => {
+  createCard(project);
+});

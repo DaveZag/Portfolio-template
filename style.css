@@ -72,12 +72,14 @@ a:hover {
   color: var(--hColor);
 }
 
-h1 {
+h1,
+.h1 {
   font-family: "Crete Round", serif;
   font-style: normal;
   color: var(--hColor);
   font-weight: 400;
   letter-spacing: 0.02375rem;
+  font-size: 2rem;
 }
 
 h2 {
@@ -411,7 +413,7 @@ main {
 
 .grid {
   display: grid;
-  grid-template: 1fr repeat(6, 24.125rem) / 1fr;
+  grid-template-columns: 95%;
   gap: 1.5em;
   align-items: end;
   justify-items: center;
@@ -442,13 +444,7 @@ main {
   margin-bottom: 1.5rem;
 }
 
-.article-img {
-  margin-bottom: 1.5rem;
-  background-color: #091e42;
-}
-
 .article-img img {
-  width: 100%;
   height: 100%;
   background: #1c1a19;
   object-fit: fill;
@@ -491,15 +487,21 @@ main {
   color: #fff;
   width: 100%;
   height: 24.125rem;
-  background: linear-gradient(180.45deg, rgba(38, 38, 38, 0) 0.75%, rgba(38, 38, 38, 0.9) 61.94%), url("./assets/images/img2.png");
+  background:
+    linear-gradient(
+      180.45deg,
+      rgba(38, 38, 38, 0) 0.75%,
+      rgba(38, 38, 38, 0.9) 61.94%
+    ),
+    url("./assets/images/img2.png");
   background-size: cover;
   padding-top: 5.25rem;
-  margin-bottom: 1.5rem;
 }
 
 .card-article {
   gap: 2rem;
   height: 100%;
+  width: 100%;
 }
 
 .card-block {
@@ -507,6 +509,10 @@ main {
   justify-content: flex-end;
   gap: 0.4rem;
   height: 100%;
+}
+
+.card-links {
+  flex-wrap: wrap;
 }
 
 .card-links li {
@@ -768,7 +774,7 @@ form .error {
   font-size: 1rem;
   padding-inline: 1rem;
   margin-block: -1rem;
-  grid-column: 1/span 3;
+  grid-column: 1 / span 3;
 }
 
 form textarea::placeholder {
@@ -842,6 +848,13 @@ form input[type="submit"] {
   .hero-img {
     background-position: right bottom -11.9%;
     background-size: 39.1333% 59.9333%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+  .card-links {
+    margin: 0;
+    gap: 0.5rem;
   }
 }
 
@@ -989,9 +1002,10 @@ form input[type="submit"] {
     height: 2rem;
     border-radius: 50%;
     background: linear-gradient(to right, var(--hColor) 50%, rgb(255, 255, 255) 9%);
-    animation: rotate 1s linear infinite, collide 4s linear 4;
     animation-delay: 6.5s;
     opacity: 0;
+
+    /* animation: rotate 1s linear infinite, collide 4s linear 4; */
   }
 
   .hero-headline p {
@@ -1055,7 +1069,7 @@ form input[type="submit"] {
   }
 
   .grid {
-    grid-template: repeat(3, 27.1875rem) / repeat(3, 1fr);
+    grid-template-columns: 33.33% 33.33% 33.33%;
     align-items: center;
     justify-content: center;
     width: 100vw;
@@ -1085,16 +1099,22 @@ form input[type="submit"] {
   }
 
   .article-img {
-    width: 63%;
-    height: 100%;
+    width: 60%;
+  }
+
+  .article-img img {
+    height: 28rem;
+    object-fit: cover;
   }
 
   .work-card {
-    margin-top: 8rem;
     padding: 0;
     position: relative;
     overflow: hidden;
     height: 27.1875rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   .work-card:hover {
@@ -1116,40 +1136,22 @@ form input[type="submit"] {
     animation: ShowBtn 350ms ease-in-out forwards;
   }
 
-  .work .work-card:nth-child(5),
-  .work .work-card:nth-child(2) {
-    background: linear-gradient(179.4deg, rgba(38, 38, 38, 0) 0.81%, rgba(38, 38, 38, 0.9) 84.03%), url("./assets/images/card-desktop1.svg");
+  .work-card > article {
+    background:
+      linear-gradient(
+        179.4deg,
+        rgba(38, 38, 38, 0) 0.81%,
+        rgba(38, 38, 38, 0.9) 84.03%
+      );
     background-size: cover;
   }
 
-  .work-card:nth-child(5):hover,
-  .work-card:nth-child(2):hover {
-    background: url("./assets/images/card-desktop1.svg");
-    background-size: cover;
+  .work-card:hover > article {
+    background: none;
   }
 
-  .work .work-card:nth-child(3),
-  .work .work-card:nth-child(6) {
-    background: linear-gradient(179.35deg, rgba(38, 38, 38, 0) 0.85%, rgba(38, 38, 38, 0.9) 84%), url("./assets/images/card-desktop2.svg");
-    background-size: cover;
-  }
-
-  .work-card:nth-child(3):hover,
-  .work-card:nth-child(6):hover {
-    background: url("./assets/images/card-desktop2.svg");
-    background-size: cover;
-  }
-
-  .work .work-card:nth-child(4),
-  .work .work-card:nth-child(7) {
-    background: linear-gradient(179.4deg, rgba(38, 38, 38, 0) 0.81%, rgba(38, 38, 38, 0.9) 84.03%), url("./assets/images/card-desktop3.svg");
-    background-size: cover;
-  }
-
-  .work-card:nth-child(4):hover,
-  .work-card:nth-child(7):hover {
-    background: url("./assets/images/card-desktop3.svg");
-    background-size: cover;
+  .card-links li {
+    margin: 0;
   }
 
   .modal-container {
@@ -1186,9 +1188,11 @@ form input[type="submit"] {
   .modal-img {
     width: 41.1875rem;
     height: 28rem;
+    object-fit: contain;
   }
 
   .modal-content {
+    padding-block: 3rem;
     width: 43%;
     height: 100%;
     justify-content: space-between;
@@ -1414,5 +1418,11 @@ form input[type="submit"] {
   .about-main-container {
     background-position: left 109% top 35.8%;
     background-size: 45.75% 29.5208%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .card-links li {
+    margin: 0.75rem 0.75rem 0.75rem 0;
   }
 }
