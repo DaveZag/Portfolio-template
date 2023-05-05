@@ -19,7 +19,7 @@
   <body>
     <!-- ================== Header ====================== -->
 
-    <header class="flex between limit limit-desk">
+    <header class="flex header between limit limit-desk">
       <div class="logo">
         <p><a href="index.html">Dave Zagabe</a></p>
       </div>
@@ -30,7 +30,9 @@
             <li class="nav-link"><a href="#about">About</a></li>
             <li class="nav-link"><a href="#contact">Contact</a></li>
             <li class="nav-link">
-              <i class="fa-solid fa-envelope"><a href="#"></a></i>
+              <a class="flex flex-center" href="mailto:davezag12@gmail.com"
+                ><i class="fa-solid fa-envelope"></i
+              ></a>
             </li>
           </ul>
         </div>
@@ -127,7 +129,7 @@
           <div class="about-container flex flex-col">
             <div class="about-text flex flex-col start-col">
               <header class="about-title">
-                <h2>About me</h2>
+                <h2 class="h1">About me</h2>
               </header>
               <div class="about-desc">
                 <p>
@@ -137,7 +139,9 @@
                 </p>
               </div>
               <div class="about-btn button">
-                <a href="#">Get My Resume</a>
+                <a href="./assets/docs/Resume.pdf" download="Dave Zagabe Resume"
+                  >Get My Resume</a
+                >
               </div>
             </div>
           </div>
@@ -299,6 +303,7 @@
     </main>
 
     <script src="main.js"></script>
+    <script src="scroll.js"></script>
     <script src="validation.js"></script>
     <script src="data-storage.js"></script>
   </body>
