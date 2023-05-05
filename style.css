@@ -859,6 +859,10 @@ form input[type="submit"] {
 }
 
 @media screen and (min-width: 768px) {
+  main {
+    padding-top: 7.4539vh;
+  }
+
   .limit {
     padding-inline: 0;
   }
@@ -868,6 +872,13 @@ form input[type="submit"] {
   }
 
   /* Header */
+
+  .header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    z-index: 999;
+  }
 
   .logo {
     min-width: fit-content;
@@ -1082,7 +1093,7 @@ form input[type="submit"] {
     gap: 1.5rem;
     width: 100%;
     grid-column: 1 / span 3;
-    margin-top: 7rem;
+    margin-top: 2rem;
     height: 28rem;
     align-items: flex-start;
   }
