@@ -156,7 +156,8 @@ const firstProject = {
 const projects = [
   {
     title: 'Cryptoist',
-    shortDesc: 'SPA app built around coinGeko api.',
+    shortDesc:
+      'A SPA that fetches and displays data about cryptocurrencies from CoinGecko Api.',
     description:
       "Cryptoist is a SPA that consists of a home page that fetches and displays data about cryptocurrencies, and a details page where the user can interact with a specific currency's information in a well-structured and interactive UI.",
     image: './assets/images/crypto.png',
@@ -165,7 +166,8 @@ const projects = [
   },
   {
     title: ['TopShow'],
-    shortDesc: 'A Show rating website built around an api.',
+    shortDesc:
+      'A Show rating website that gets shows from an API and displays them dynamically. The app allows a user to comment and like a show.',
     description:
       'TopShow is a SPA that gets shows from an API and displays them dynamically. The app allows you to comment and like a show. It records the total number of likes in another API and comments per show and it shows comments and a brief description of the show when you click on the comment button.',
     image: './assets/images/topshow.webp',
@@ -193,7 +195,7 @@ const projects = [
     shortDesc:
       'A platform that provides students from all around the world an opportunity to learn coding.',
     description:
-      'Smart is a platform that provides students from all around the world an opportunity to learn coding without having to worry about distance, Fees, and other hindrances that can easily be found in traditional school systems.',
+      'Smart is a platform that provides students from all around the world an opportunity to learn coding without having to worry about distance, Fees, and other hindrances that can easily be found in traditional school systems. This website was my first capstone project at Microverse.',
     image: './assets/images/smart.png',
     technologies: ['HTML', 'CSS3', 'JavaScript', 'SASS'],
     btnLink: ['https://davezag.github.io/Smart', 'https://github.com/DaveZag/Smart'],
